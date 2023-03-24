@@ -1,4 +1,4 @@
-department = softwaresystem "Government Department" "Allows Citizen's to view information about their accounts, and make payments." {
+department = softwaresystem "Government Department" "Allows citizens to view information about their accounts, and make payments." {
     !docs ./docs
     !adrs ./adrs
     properties {
