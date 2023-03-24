@@ -18,7 +18,7 @@ Enterprise_Boundary(enterprise, "Government Body") {
   WithoutPropertyHeader()
   AddProperty("Development Team","Dev/Internet Services")
   AddProperty("Owner","Customer Services")
-  System(GovernmentDepartment, "Government Department", "Allows Citizen's to view information about their accounts, and make payments.", $tags="")
+  System(GovernmentDepartment, "Government Department", "Allows citizens to view information about their accounts, and make payments.", $tags="")
 }
 
 Person_Ext(Citizen, "Citizen", "A member of the public", $tags="")
