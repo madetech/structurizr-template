@@ -1,0 +1,29 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+    - main
+
+permissions:
+  contents: write
+
+jobs:
+  deploy_github_pages:
+    runs-on: macos-latest
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v3
+
+    - name: Install dependencies and build the site
+      run: |
+        brew tap avisi-cloud/tools
+        brew install structurizr-site-generatr
+        structurizr-site-generatr generate-site -w workspace.dsl -a assets --branches main --default-branch main
+
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        branch: gh-pages
+        folder: build/site
+        clean: true
