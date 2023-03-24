@@ -1,0 +1,27 @@
+@startuml
+set separator none
+title Government Department - System Context
+
+top to bottom direction
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+Enterprise_Boundary(enterprise, "Government Body") {
+  System(BankingSystem, "Banking System", "Stores all of the core banking information about citizens, accounts, transactions, etc.", $tags="")
+  WithoutPropertyHeader()
+  AddProperty("Development Team","Dev/Internet Services")
+  AddProperty("Owner","Customer Services")
+  System(GovernmentDepartment, "Government Department", "Allows Citizen's to view information about their accounts, and make payments.", $tags="")
+}
+
+Person_Ext(Citizen, "Citizen", "A member of the public", $tags="")
+System_Ext(GovNotify, "GovNotify", "The Government Service for sending e-maills.", $tags="")
+
+Rel_D(Citizen, GovernmentDepartment, "Views account balances, and makes payments using", $tags="")
+Rel_D(GovernmentDepartment, BankingSystem, "Gets account information from, and makes payments using", $tags="")
+Rel_D(GovernmentDepartment, GovNotify, "Sends e-mail using", $tags="")
+Rel_D(GovNotify, Citizen, "Sends e-mails to", $tags="")
+
+SHOW_LEGEND(true)
+@enduml
