@@ -2,7 +2,7 @@
 
 Another company has created a tool for this use case: [Structurizr Site Generatr](https://github.com/avisi-cloud/structurizr-site-generatr)
 
-> A static site generator for C4 architecture models created with [Structrizr DSL](https://github.com/structurizr/dsl). See [Background](https://github.com/avisi-cloud/structurizr-site-generatr#background) for the story behind this tool.
+> A static site generator for C4 architecture models created with [Structurizr DSL](https://github.com/structurizr/dsl). See [Background](https://github.com/avisi-cloud/structurizr-site-generatr#background) for the story behind this tool.
 >
 > [Click here to see an example of a generated site](https://avisi-cloud.github.io/structurizr-site-generatr) based on the [Big Bank plc example](https://structurizr.com/dsl?example=big-bank-plc) from https://structurizr.com. This site is generated from the example workspace in this repository.
 >
