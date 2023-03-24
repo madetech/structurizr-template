@@ -12,6 +12,12 @@ Another company has created a tool for this use case: [Structurizr Site Generatr
 
 You can get various exports using this tool (`svg`, `png`, `puml`)
 
+## Example
+
+[GitHub Pages](https://madetech.github.io/structurizr-template/main/) hosts this repo as an example.
+
+It is built and deployed via the [GitHub Action here](https://github.com/madetech/structurizr-template/blob/main/.github/workflows/cd.yml).
+
 ## Install
 
 ```
