@@ -47,4 +47,6 @@ Assets can be found in the `assets` folder. They can whatever they need to be, e
 
 ## Support
 
-Read [Structurizr Site Generatr](https://github.com/avisi-cloud/structurizr-site-generatr) for more information.
+* Knowledge and understanding of [C4 Model](https://c4model.com/).
+* Learning the [Structurizr DSL](https://github.com/structurizr/dsl) is important.
+* Read [Structurizr Site Generatr](https://github.com/avisi-cloud/structurizr-site-generatr) for problems with the tool.
