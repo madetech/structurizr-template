@@ -62,3 +62,4 @@ This will allow you to you to use Structurizr website locally before committing 
 * Knowledge and understanding of [C4 Model](https://c4model.com/).
 * Learning the [Structurizr DSL](https://github.com/structurizr/dsl) is important.
 * Read [Structurizr Site Generatr](https://github.com/avisi-cloud/structurizr-site-generatr) for problems with the tool.
+* Watch [Diagrams as Code 2.0](https://www.youtube.com/watch?v=Za1-v4Zkq5E) for an explanation/motivation for why Structurizr.
