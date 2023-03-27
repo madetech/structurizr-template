@@ -1,3 +1,7 @@
 build/
 .vscode
 *.DS_Store
+
+# Used for the Structurizr Lite Docker server
+.structurizr
+workspace.json

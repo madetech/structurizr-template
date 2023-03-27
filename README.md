@@ -45,6 +45,18 @@ structurizr-site-generatr generate-site -w workspace.dsl -a assets --branches ma
 
 Assets can be found in the `assets` folder. They can whatever they need to be, e.g. images.
 
+## Local Interactive Server
+
+You can use [Structurizr Lite](https://structurizr.com/share/76352/documentation) by:
+
+```
+cd structurizr-template
+docker pull structurizr/lite
+docker run -it --rm -p 8080:8080 -v $PWD:/usr/local/structurizr structurizr/lite
+```
+
+This will allow you to you to use Structurizr website locally before committing changes.
+
 ## Support
 
 * Knowledge and understanding of [C4 Model](https://c4model.com/).
