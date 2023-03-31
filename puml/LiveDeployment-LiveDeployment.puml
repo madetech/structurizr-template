@@ -58,8 +58,8 @@ Deployment_Node(Live.Citizensmobiledevice, "Citizen's mobile device", "Apple iOS
 }
 
 Rel_D(Live.Bank.bankweb.ApacheTomcat.WebApplication_1, Live.Citizenscomputer.WebBrowser.SinglePageApplication_1, "Delivers to the citizen's web browser", $tags="")
-Rel_D(Live.Citizensmobiledevice.MobileApp_1, Live.Bank.bankapi.ApacheTomcat.APIApplication_1, "Makes API calls to", "JSON/HTTPS", $tags="")
 Rel_D(Live.Citizenscomputer.WebBrowser.SinglePageApplication_1, Live.Bank.bankapi.ApacheTomcat.APIApplication_1, "Makes API calls to", "JSON/HTTPS", $tags="")
+Rel_D(Live.Citizensmobiledevice.MobileApp_1, Live.Bank.bankapi.ApacheTomcat.APIApplication_1, "Makes API calls to", "JSON/HTTPS", $tags="")
 Rel_D(Live.Bank.bankapi.ApacheTomcat.APIApplication_1, Live.Bank.bankdb01.OraclePrimary.Database_1, "Reads from and writes to", "JDBC", $tags="")
 Rel_D(Live.Bank.bankapi.ApacheTomcat.APIApplication_1, Live.Bank.bankdb02.OracleSecondary.Database_1, "Reads from and writes to", "JDBC", $tags="")
 Rel_D(Live.Bank.bankapi.ApacheTomcat.APIApplication_1, Live.Bank.bankprod001.BankingSystem_1, "Makes API calls to", "XML/HTTPS", $tags="")
