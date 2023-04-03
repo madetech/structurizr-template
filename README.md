@@ -4,6 +4,7 @@
 
 * Why we like to [Visualise Architecture](https://github.com/madetech/architecture-handbook/blob/main/learning_paths/visualising_architecture.md).
   * C4 Model and Structurizr are one way to achieving this.
+  * See more [tools here](https://madetech.github.io/architecture-handbook/principles/tools.html).
 * Knowledge and understanding of [C4 Model](https://c4model.com/).
 * Watch [Diagrams as Code 2.0](https://www.youtube.com/watch?v=Za1-v4Zkq5E) for an explanation/motivation for why Structurizr.
 * Learning the [Structurizr DSL](https://github.com/structurizr/dsl) is important but not necessary for this demo.
