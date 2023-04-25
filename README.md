@@ -9,6 +9,12 @@
 * Watch [Diagrams as Code 2.0](https://www.youtube.com/watch?v=Za1-v4Zkq5E) for an explanation/motivation for why Structurizr.
 * Learning the [Structurizr DSL](https://github.com/structurizr/dsl) is important but not necessary for this demo.
 
+## Visual Studio Code Support
+
+There are two not an official extensions. I would recommend the simple [Structurizr DSL](https://marketplace.visualstudio.com/items?itemName=ciarant.vscode-structurizr) syntax highlighter.
+
+The other extensions are complicated and can make external calls to render diagrams.
+
 ## Local Interactive Server
 
 Clone this Repo to get started and you can use [Structurizr Lite](https://structurizr.com/share/76352/documentation) by:
