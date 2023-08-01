@@ -4,39 +4,39 @@ title Government Department - API Application - Components
 
 top to bottom direction
 
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4.puml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+!include <C4/C4>
+!include <C4/C4_Context>
+!include <C4/C4_Container>
+!include <C4/C4_Component>
 
-System_Ext(GovNotify, "GovNotify", "The Government Service for sending e-maills.", $tags="")
-System(BankingSystem, "Banking System", "Stores all of the core banking information about citizens, accounts, transactions, etc.", $tags="")
-ContainerDb(GovernmentDepartment.Database, "Database", "Oracle Database Schema", "Stores user registration information, hashed authentication credentials, access logs, etc.", $tags="")
-Container(GovernmentDepartment.SinglePageApplication, "Single-Page Application", "JavaScript and Angular", "Provides all of the Internet banking functionality to customers via their web browser.", $tags="")
-Container(GovernmentDepartment.MobileApp, "Mobile App", "Xamarin", "Provides a limited subset of the Internet banking functionality to customers via their mobile device.", $tags="")
+System_Ext(GovNotify, "GovNotify", $descr="The Government Service for sending e-maills.", $tags="", $link="")
+System(BankingSystem, "Banking System", $descr="Stores all of the core banking information about citizens, accounts, transactions, etc.", $tags="", $link="")
+ContainerDb(GovernmentDepartment.Database, "Database", $techn="Oracle Database Schema", $descr="Stores user registration information, hashed authentication credentials, access logs, etc.", $tags="", $link="")
+Container(GovernmentDepartment.SinglePageApplication, "Single-Page Application", $techn="JavaScript and Angular", $descr="Provides all of the Internet banking functionality to customers via their web browser.", $tags="", $link="")
+Container(GovernmentDepartment.MobileApp, "Mobile App", $techn="Xamarin", $descr="Provides a limited subset of the Internet banking functionality to customers via their mobile device.", $tags="", $link="")
 
 Container_Boundary("GovernmentDepartment.APIApplication_boundary", "API Application", $tags="") {
-  Component(GovernmentDepartment.APIApplication.SignInController, "Sign In Controller", "Spring MVC Rest Controller", "Allows users to sign in to the Internet Banking System.", $tags="")
-  Component(GovernmentDepartment.APIApplication.AccountsSummaryController, "Accounts Summary Controller", "Spring MVC Rest Controller", "Provides customers with a summary of their bank accounts.", $tags="")
-  Component(GovernmentDepartment.APIApplication.ResetPasswordController, "Reset Password Controller", "Spring MVC Rest Controller", "Allows users to reset their passwords with a single use URL.", $tags="")
-  Component(GovernmentDepartment.APIApplication.SecurityComponent, "Security Component", "Spring Bean", "Provides functionality related to signing in, changing passwords, etc.", $tags="")
-  Component(GovernmentDepartment.APIApplication.BankingSystemFacade, "Banking System Facade", "Spring Bean", "A facade onto the banking system.", $tags="")
-  Component(GovernmentDepartment.APIApplication.EmailComponent, "E-mail Component", "Spring Bean", "Sends e-mails to users.", $tags="")
+  Component(GovernmentDepartment.APIApplication.SignInController, "Sign In Controller", $techn="Spring MVC Rest Controller", $descr="Allows users to sign in to the Internet Banking System.", $tags="", $link="")
+  Component(GovernmentDepartment.APIApplication.AccountsSummaryController, "Accounts Summary Controller", $techn="Spring MVC Rest Controller", $descr="Provides customers with a summary of their bank accounts.", $tags="", $link="")
+  Component(GovernmentDepartment.APIApplication.ResetPasswordController, "Reset Password Controller", $techn="Spring MVC Rest Controller", $descr="Allows users to reset their passwords with a single use URL.", $tags="", $link="")
+  Component(GovernmentDepartment.APIApplication.SecurityComponent, "Security Component", $techn="Spring Bean", $descr="Provides functionality related to signing in, changing passwords, etc.", $tags="", $link="")
+  Component(GovernmentDepartment.APIApplication.BankingSystemFacade, "Banking System Facade", $techn="Spring Bean", $descr="A facade onto the banking system.", $tags="", $link="")
+  Component(GovernmentDepartment.APIApplication.EmailComponent, "E-mail Component", $techn="Spring Bean", $descr="Sends e-mails to users.", $tags="", $link="")
 }
 
-Rel_D(GovernmentDepartment.SinglePageApplication, GovernmentDepartment.APIApplication.SignInController, "Makes API calls to", "JSON/HTTPS", $tags="")
-Rel_D(GovernmentDepartment.SinglePageApplication, GovernmentDepartment.APIApplication.AccountsSummaryController, "Makes API calls to", "JSON/HTTPS", $tags="")
-Rel_D(GovernmentDepartment.SinglePageApplication, GovernmentDepartment.APIApplication.ResetPasswordController, "Makes API calls to", "JSON/HTTPS", $tags="")
-Rel_D(GovernmentDepartment.MobileApp, GovernmentDepartment.APIApplication.SignInController, "Makes API calls to", "JSON/HTTPS", $tags="")
-Rel_D(GovernmentDepartment.MobileApp, GovernmentDepartment.APIApplication.AccountsSummaryController, "Makes API calls to", "JSON/HTTPS", $tags="")
-Rel_D(GovernmentDepartment.MobileApp, GovernmentDepartment.APIApplication.ResetPasswordController, "Makes API calls to", "JSON/HTTPS", $tags="")
-Rel_D(GovernmentDepartment.APIApplication.SignInController, GovernmentDepartment.APIApplication.SecurityComponent, "Uses", $tags="")
-Rel_D(GovernmentDepartment.APIApplication.AccountsSummaryController, GovernmentDepartment.APIApplication.BankingSystemFacade, "Uses", $tags="")
-Rel_D(GovernmentDepartment.APIApplication.ResetPasswordController, GovernmentDepartment.APIApplication.SecurityComponent, "Uses", $tags="")
-Rel_D(GovernmentDepartment.APIApplication.ResetPasswordController, GovernmentDepartment.APIApplication.EmailComponent, "Uses", $tags="")
-Rel_D(GovernmentDepartment.APIApplication.SecurityComponent, GovernmentDepartment.Database, "Reads from and writes to", "JDBC", $tags="")
-Rel_D(GovernmentDepartment.APIApplication.BankingSystemFacade, BankingSystem, "Makes API calls to", "XML/HTTPS", $tags="")
-Rel_D(GovernmentDepartment.APIApplication.EmailComponent, GovNotify, "Sends e-mail using", "JSON/HTTPS", $tags="")
+Rel_D(GovernmentDepartment.SinglePageApplication, GovernmentDepartment.APIApplication.SignInController, "Makes API calls to", $techn="JSON/HTTPS", $tags="", $link="")
+Rel_D(GovernmentDepartment.SinglePageApplication, GovernmentDepartment.APIApplication.AccountsSummaryController, "Makes API calls to", $techn="JSON/HTTPS", $tags="", $link="")
+Rel_D(GovernmentDepartment.SinglePageApplication, GovernmentDepartment.APIApplication.ResetPasswordController, "Makes API calls to", $techn="JSON/HTTPS", $tags="", $link="")
+Rel_D(GovernmentDepartment.MobileApp, GovernmentDepartment.APIApplication.SignInController, "Makes API calls to", $techn="JSON/HTTPS", $tags="", $link="")
+Rel_D(GovernmentDepartment.MobileApp, GovernmentDepartment.APIApplication.AccountsSummaryController, "Makes API calls to", $techn="JSON/HTTPS", $tags="", $link="")
+Rel_D(GovernmentDepartment.MobileApp, GovernmentDepartment.APIApplication.ResetPasswordController, "Makes API calls to", $techn="JSON/HTTPS", $tags="", $link="")
+Rel_D(GovernmentDepartment.APIApplication.SignInController, GovernmentDepartment.APIApplication.SecurityComponent, "Uses", $techn="", $tags="", $link="")
+Rel_D(GovernmentDepartment.APIApplication.AccountsSummaryController, GovernmentDepartment.APIApplication.BankingSystemFacade, "Uses", $techn="", $tags="", $link="")
+Rel_D(GovernmentDepartment.APIApplication.ResetPasswordController, GovernmentDepartment.APIApplication.SecurityComponent, "Uses", $techn="", $tags="", $link="")
+Rel_D(GovernmentDepartment.APIApplication.ResetPasswordController, GovernmentDepartment.APIApplication.EmailComponent, "Uses", $techn="", $tags="", $link="")
+Rel_D(GovernmentDepartment.APIApplication.SecurityComponent, GovernmentDepartment.Database, "Reads from and writes to", $techn="JDBC", $tags="", $link="")
+Rel_D(GovernmentDepartment.APIApplication.BankingSystemFacade, BankingSystem, "Makes API calls to", $techn="XML/HTTPS", $tags="", $link="")
+Rel_D(GovernmentDepartment.APIApplication.EmailComponent, GovNotify, "Sends e-mail using", $techn="JSON/HTTPS", $tags="", $link="")
 
 SHOW_LEGEND(true)
 @enduml

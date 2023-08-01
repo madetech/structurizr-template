@@ -6,16 +6,17 @@
     <title>Government Department | Government Body</title>
     <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet">
     <link href="../../style.css" rel="stylesheet">
-    <link href="../../style-branding.css" rel="stylesheet">
-    <link href="../site/made-tech-logo.png" rel="icon" type="image/png">
+    <link href="./../style-branding.css" rel="stylesheet">
   </head>
   <body>
+    <script type="text/javascript" src="../../header.js"></script>
     <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand has-site-branding"><a href="../" class="navbar-item"><img alt="Government Body" src="../site/made-tech-logo.png"></a><a href="../" class="navbar-item"><span class="has-text-weight-semibold has-site-branding">Government Body</span></a></div>
+      <div class="navbar-brand has-site-branding"><a href="../" class="navbar-item"><span class="has-text-weight-semibold has-site-branding">Government Body</span></a></div>
       <div class="navbar-menu has-site-branding">
         <div class="navbar-end">
+          <div class="navbar-item"><input class="input is-small is-rounded has-site-branding" id="search" type="search" size="30" maxlength="50" placeholder="Search (requires 3 characters)..." onkeyup="redirect(event, value, '../search/')"></div>
           <div class="navbar-item has-dropdown is-hoverable"><a class="navbar-link has-site-branding">main</a>
-            <div class="navbar-dropdown is-right"><a href="../../main" class="navbar-item">main</a>
+            <div class="navbar-dropdown is-right"><a href="../../main/" class="navbar-item">main</a>
               <hr class="navbar-divider">
               <div class="navbar-item has-text-grey-light"><span>v</span><span>0.0.0</span></div>
             </div>
@@ -75,5 +76,7 @@
         </div>
       </div>
     </div>
+    <script type="text/javascript" src="../../reformat-mermaid.js"></script>
+    <script type="module">import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';</script>
   </body>
 </html>

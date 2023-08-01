@@ -4,25 +4,25 @@ title API Application - Dynamic
 
 top to bottom direction
 
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4.puml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+!include <C4/C4>
+!include <C4/C4_Context>
+!include <C4/C4_Container>
+!include <C4/C4_Component>
 
 Container_Boundary("GovernmentDepartment.APIApplication_boundary", "API Application", $tags="") {
-  Component(GovernmentDepartment.APIApplication.SignInController, "Sign In Controller", "Spring MVC Rest Controller", "Allows users to sign in to the Internet Banking System.", $tags="")
-  Component(GovernmentDepartment.APIApplication.SecurityComponent, "Security Component", "Spring Bean", "Provides functionality related to signing in, changing passwords, etc.", $tags="")
+  Component(GovernmentDepartment.APIApplication.SignInController, "Sign In Controller", $techn="Spring MVC Rest Controller", $descr="Allows users to sign in to the Internet Banking System.", $tags="", $link="")
+  Component(GovernmentDepartment.APIApplication.SecurityComponent, "Security Component", $techn="Spring Bean", $descr="Provides functionality related to signing in, changing passwords, etc.", $tags="", $link="")
 }
 
-ContainerDb(GovernmentDepartment.Database, "Database", "Oracle Database Schema", "Stores user registration information, hashed authentication credentials, access logs, etc.", $tags="")
-Container(GovernmentDepartment.SinglePageApplication, "Single-Page Application", "JavaScript and Angular", "Provides all of the Internet banking functionality to customers via their web browser.", $tags="")
+ContainerDb(GovernmentDepartment.Database, "Database", $techn="Oracle Database Schema", $descr="Stores user registration information, hashed authentication credentials, access logs, etc.", $tags="", $link="")
+Container(GovernmentDepartment.SinglePageApplication, "Single-Page Application", $techn="JavaScript and Angular", $descr="Provides all of the Internet banking functionality to customers via their web browser.", $tags="", $link="")
 
-Rel_D(GovernmentDepartment.SinglePageApplication, GovernmentDepartment.APIApplication.SignInController, "1. Submits credentials to", "JSON/HTTPS", $tags="")
-Rel_D(GovernmentDepartment.APIApplication.SignInController, GovernmentDepartment.APIApplication.SecurityComponent, "2. Validates credentials using", $tags="")
-Rel_D(GovernmentDepartment.APIApplication.SecurityComponent, GovernmentDepartment.Database, "3. select * from users where username = ?", "JDBC", $tags="")
-Rel_D(GovernmentDepartment.Database, GovernmentDepartment.APIApplication.SecurityComponent, "4. Returns user data to", "JDBC", $tags="")
-Rel_D(GovernmentDepartment.APIApplication.SecurityComponent, GovernmentDepartment.APIApplication.SignInController, "5. Returns true if the hashed password matches", $tags="")
-Rel_D(GovernmentDepartment.APIApplication.SignInController, GovernmentDepartment.SinglePageApplication, "6. Sends back an authentication token to", "JSON/HTTPS", $tags="")
+Rel_D(GovernmentDepartment.SinglePageApplication, GovernmentDepartment.APIApplication.SignInController, "1. Submits credentials to", $techn="JSON/HTTPS", $tags="", $link="")
+Rel_D(GovernmentDepartment.APIApplication.SignInController, GovernmentDepartment.APIApplication.SecurityComponent, "2. Validates credentials using", $techn="", $tags="", $link="")
+Rel_D(GovernmentDepartment.APIApplication.SecurityComponent, GovernmentDepartment.Database, "3. select * from users where username = ?", $techn="JDBC", $tags="", $link="")
+Rel_D(GovernmentDepartment.Database, GovernmentDepartment.APIApplication.SecurityComponent, "4. Returns user data to", $techn="JDBC", $tags="", $link="")
+Rel_D(GovernmentDepartment.APIApplication.SecurityComponent, GovernmentDepartment.APIApplication.SignInController, "5. Returns true if the hashed password matches", $techn="", $tags="", $link="")
+Rel_D(GovernmentDepartment.APIApplication.SignInController, GovernmentDepartment.SinglePageApplication, "6. Sends back an authentication token to", $techn="JSON/HTTPS", $tags="", $link="")
 
 SHOW_LEGEND(true)
 @enduml

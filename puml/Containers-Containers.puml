@@ -4,34 +4,34 @@ title Government Department - Containers
 
 top to bottom direction
 
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4.puml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include <C4/C4>
+!include <C4/C4_Context>
+!include <C4/C4_Container>
 
 skinparam svgDimensionStyle false
 skinparam preserveAspectRatio meet
-Person_Ext(Citizen, "Citizen", "A member of the public", $tags="")
-System_Ext(GovNotify, "GovNotify", "The Government Service for sending e-maills.", $tags="")
-System(BankingSystem, "Banking System", "Stores all of the core banking information about citizens, accounts, transactions, etc.", $tags="")[[../../banking-system/context/]]
+Person_Ext(Citizen, "Citizen", $descr="A member of the public", $tags="", $link="")
+System_Ext(GovNotify, "GovNotify", $descr="The Government Service for sending e-maills.", $tags="", $link="")
+System(BankingSystem, "Banking System", $descr="Stores all of the core banking information about citizens, accounts, transactions, etc.", $tags="", $link="../../banking-system/context/")
 
 System_Boundary("GovernmentDepartment_boundary", "Government Department", $tags="") {
-  Container(GovernmentDepartment.APIApplication, "API Application", "Java and Spring MVC", "Provides Internet banking functionality via a JSON/HTTPS API.", $tags="")
-  ContainerDb(GovernmentDepartment.Database, "Database", "Oracle Database Schema", "Stores user registration information, hashed authentication credentials, access logs, etc.", $tags="")
-  Container(GovernmentDepartment.SinglePageApplication, "Single-Page Application", "JavaScript and Angular", "Provides all of the Internet banking functionality to customers via their web browser.", $tags="")
-  Container(GovernmentDepartment.MobileApp, "Mobile App", "Xamarin", "Provides a limited subset of the Internet banking functionality to customers via their mobile device.", $tags="")
-  Container(GovernmentDepartment.WebApplication, "Web Application", "Java and Spring MVC", "Delivers the static content and the Internet banking single page application.", $tags="")
+  Container(GovernmentDepartment.APIApplication, "API Application", $techn="Java and Spring MVC", $descr="Provides Internet banking functionality via a JSON/HTTPS API.", $tags="", $link="../component/")
+  ContainerDb(GovernmentDepartment.Database, "Database", $techn="Oracle Database Schema", $descr="Stores user registration information, hashed authentication credentials, access logs, etc.", $tags="", $link="")
+  Container(GovernmentDepartment.SinglePageApplication, "Single-Page Application", $techn="JavaScript and Angular", $descr="Provides all of the Internet banking functionality to customers via their web browser.", $tags="", $link="")
+  Container(GovernmentDepartment.MobileApp, "Mobile App", $techn="Xamarin", $descr="Provides a limited subset of the Internet banking functionality to customers via their mobile device.", $tags="", $link="")
+  Container(GovernmentDepartment.WebApplication, "Web Application", $techn="Java and Spring MVC", $descr="Delivers the static content and the Internet banking single page application.", $tags="", $link="")
 }
 
-Rel_D(GovNotify, Citizen, "Sends e-mails to", $tags="")
-Rel_D(Citizen, GovernmentDepartment.WebApplication, "Visits someservice.gov.uk using", "HTTPS", $tags="")
-Rel_D(Citizen, GovernmentDepartment.SinglePageApplication, "Views account balances, and makes payments using", $tags="")
-Rel_D(Citizen, GovernmentDepartment.MobileApp, "Views account balances, and makes payments using", $tags="")
-Rel_D(GovernmentDepartment.WebApplication, GovernmentDepartment.SinglePageApplication, "Delivers to the citizen's web browser", $tags="")
-Rel_D(GovernmentDepartment.SinglePageApplication, GovernmentDepartment.APIApplication, "Makes API calls to", "JSON/HTTPS", $tags="")
-Rel_D(GovernmentDepartment.MobileApp, GovernmentDepartment.APIApplication, "Makes API calls to", "JSON/HTTPS", $tags="")
-Rel_D(GovernmentDepartment.APIApplication, GovernmentDepartment.Database, "Reads from and writes to", "JDBC", $tags="")
-Rel_D(GovernmentDepartment.APIApplication, BankingSystem, "Makes API calls to", "XML/HTTPS", $tags="")
-Rel_D(GovernmentDepartment.APIApplication, GovNotify, "Sends e-mail using", "JSON/HTTPS", $tags="")
+Rel_D(GovNotify, Citizen, "Sends e-mails to", $techn="", $tags="", $link="")
+Rel_D(Citizen, GovernmentDepartment.WebApplication, "Visits someservice.gov.uk using", $techn="HTTPS", $tags="", $link="")
+Rel_D(Citizen, GovernmentDepartment.SinglePageApplication, "Views account balances, and makes payments using", $techn="", $tags="", $link="")
+Rel_D(Citizen, GovernmentDepartment.MobileApp, "Views account balances, and makes payments using", $techn="", $tags="", $link="")
+Rel_D(GovernmentDepartment.WebApplication, GovernmentDepartment.SinglePageApplication, "Delivers to the citizen's web browser", $techn="", $tags="", $link="")
+Rel_D(GovernmentDepartment.SinglePageApplication, GovernmentDepartment.APIApplication, "Makes API calls to", $techn="JSON/HTTPS", $tags="", $link="")
+Rel_D(GovernmentDepartment.MobileApp, GovernmentDepartment.APIApplication, "Makes API calls to", $techn="JSON/HTTPS", $tags="", $link="")
+Rel_D(GovernmentDepartment.APIApplication, GovernmentDepartment.Database, "Reads from and writes to", $techn="JDBC", $tags="", $link="")
+Rel_D(GovernmentDepartment.APIApplication, BankingSystem, "Makes API calls to", $techn="XML/HTTPS", $tags="", $link="")
+Rel_D(GovernmentDepartment.APIApplication, GovNotify, "Sends e-mail using", $techn="JSON/HTTPS", $tags="", $link="")
 
 SHOW_LEGEND(true)
 @enduml
