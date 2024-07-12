@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en" data-theme="light" class="has-background-light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GovNotify | Government Body</title>
+    <link href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css" rel="stylesheet">
+    <link href="../../../style.css" rel="stylesheet">
+    <link href="./../../style-branding.css" rel="stylesheet">
+    <script type="text/javascript" src="../../../modal.js"></script>
+    <script type="text/javascript" src="../../../svg-modal.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript" src="../../../header.js"></script>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand has-site-branding"><a href="../../" class="navbar-item"><span class="has-text-weight-semibold has-site-branding">Government Body</span></a></div>
+      <div class="navbar-menu has-site-branding">
+        <div class="navbar-end">
+          <div class="navbar-item"><input class="input is-small is-rounded has-site-branding" id="search" type="search" size="30" maxlength="50" placeholder="Search..." onkeyup="redirect(event, value, '../../search/')"></div>
+          <div class="navbar-item has-dropdown is-hoverable"><a class="navbar-link has-site-branding">main</a>
+            <div class="navbar-dropdown is-right"><a href="../../../main/" class="navbar-item">main</a>
+              <hr class="navbar-divider">
+              <div class="navbar-item has-text-grey-light"><span>v</span><span>0.0.0</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="site-layout" id="site">
+      <aside class="menu p-3">
+        <p class="menu-label">General</p>
+        <ul class="menu-list has-site-branding">
+          <li><a href="../../" class="">Home</a><a href="../../decisions/" class="">Decisions</a><a href="../../software-systems/" class="">Software Systems</a><a href="../../embedding-diagrams-and-images/" class="">Embedding diagrams and images</a></li>
+        </ul>
+        <p class="menu-label">Software systems</p>
+        <ul class="menu-list has-site-branding">
+          <li><a href="../../banking-system/" class="">Banking System</a><a href="../../government-department/" class="">Government Department</a><a href="../" class="is-active">GovNotify</a></li>
+        </ul>
+      </aside>
+      <div class="container is-fluid has-background-white">
+        <h1 class="title mt-3">GovNotify</h1>
+        <h2 class="subtitle">The Government Service for sending e-maills.</h2>
+        <div class="tabs mt-3">
+          <ul class="is-flex-wrap-wrap is-flex-shrink-1 is-flex-grow-0">
+            <li><a href="../" class="">Info</a></li>
+            <li class="is-active"><a href="./" class="is-active">Dependencies</a></li>
+          </ul>
+        </div>
+        <div class="content p-3">
+          <h2>Inbound</h2>
+          <table class="table is-fullwidth">
+            <thead>
+              <tr>
+                <th>System</th>
+                <th>Description</th>
+                <th>Technology</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th><a href="../../government-department/" class="">Government Department</a></th>
+                <td>Sends e-mail using</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          <h2>Outbound</h2>
+          <table class="table is-fullwidth">
+            <thead>
+              <tr>
+                <th>System</th>
+                <th>Description</th>
+                <th>Technology</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="../../../reformat-mermaid.js"></script>
+    <script type="module">import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.esm.min.mjs';</script>
+  </body>
+</html>

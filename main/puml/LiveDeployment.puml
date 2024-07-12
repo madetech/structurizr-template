@@ -9,59 +9,59 @@ top to bottom direction
 !include <C4/C4_Container>
 !include <C4/C4_Deployment>
 
-Deployment_Node(Live.Citizensmobiledevice, "Citizen's mobile device", $type="Apple iOS or Android", $tags="", $link="") {
+Deployment_Node(Live.Citizensmobiledevice, "Citizen's mobile device", $type="Apple iOS or Android", $descr="", $tags="", $link="") {
   Container(Live.Citizensmobiledevice.MobileApp_1, "Mobile App", $techn="Xamarin", $descr="Provides a limited subset of the Internet banking functionality to customers via their mobile device.", $tags="", $link="")
 }
 
-Deployment_Node(Live.Citizenscomputer, "Citizen's computer", $type="Microsoft Windows or Apple macOS", $tags="", $link="") {
-  Deployment_Node(Live.Citizenscomputer.WebBrowser, "Web Browser", $type="Chrome, Firefox, Safari, or Edge", $tags="", $link="") {
+Deployment_Node(Live.Citizenscomputer, "Citizen's computer", $type="Microsoft Windows or Apple macOS", $descr="", $tags="", $link="") {
+  Deployment_Node(Live.Citizenscomputer.WebBrowser, "Web Browser", $type="Chrome, Firefox, Safari, or Edge", $descr="", $tags="", $link="") {
     Container(Live.Citizenscomputer.WebBrowser.SinglePageApplication_1, "Single-Page Application", $techn="JavaScript and Angular", $descr="Provides all of the Internet banking functionality to customers via their web browser.", $tags="", $link="")
   }
 
 }
 
-Deployment_Node(Live.Bank, "Bank", $type="Bank data center", $tags="", $link="") {
-  Deployment_Node(Live.Bank.bankweb, "bank-web*** (x4)", $type="Ubuntu 16.04 LTS", $tags="", $link="") {
-    Deployment_Node(Live.Bank.bankweb.ApacheTomcat, "Apache Tomcat", $type="Apache Tomcat 8.x", $tags="", $link="") {
+Deployment_Node(Live.Bank, "Bank", $type="Bank data center", $descr="", $tags="", $link="") {
+  Deployment_Node(Live.Bank.bankweb, "bank-web*** (x4)", $type="Ubuntu 16.04 LTS", $descr="", $tags="", $link="") {
+    Deployment_Node(Live.Bank.bankweb.ApacheTomcat, "Apache Tomcat", $type="Apache Tomcat 8.x", $descr="", $tags="", $link="") {
       Container(Live.Bank.bankweb.ApacheTomcat.WebApplication_1, "Web Application", $techn="Java and Spring MVC", $descr="Delivers the static content and the Internet banking single page application.", $tags="", $link="")
     }
 
   }
 
-  Deployment_Node(Live.Bank.bankapi, "bank-api*** (x8)", $type="Ubuntu 16.04 LTS", $tags="", $link="") {
-    Deployment_Node(Live.Bank.bankapi.ApacheTomcat, "Apache Tomcat", $type="Apache Tomcat 8.x", $tags="", $link="") {
+  Deployment_Node(Live.Bank.bankapi, "bank-api*** (x8)", $type="Ubuntu 16.04 LTS", $descr="", $tags="", $link="") {
+    Deployment_Node(Live.Bank.bankapi.ApacheTomcat, "Apache Tomcat", $type="Apache Tomcat 8.x", $descr="", $tags="", $link="") {
       Container(Live.Bank.bankapi.ApacheTomcat.APIApplication_1, "API Application", $techn="Java and Spring MVC", $descr="Provides Internet banking functionality via a JSON/HTTPS API.", $tags="", $link="")
     }
 
   }
 
-  Deployment_Node(Live.Bank.bankdb01, "bank-db01", $type="Ubuntu 16.04 LTS", $tags="", $link="") {
-    Deployment_Node(Live.Bank.bankdb01.OraclePrimary, "Oracle - Primary", $type="Oracle 12c", $tags="", $link="") {
+  Deployment_Node(Live.Bank.bankdb01, "bank-db01", $type="Ubuntu 16.04 LTS", $descr="", $tags="", $link="") {
+    Deployment_Node(Live.Bank.bankdb01.OraclePrimary, "Oracle - Primary", $type="Oracle 12c", $descr="", $tags="", $link="") {
       ContainerDb(Live.Bank.bankdb01.OraclePrimary.Database_1, "Database", $techn="Oracle Database Schema", $descr="Stores user registration information, hashed authentication credentials, access logs, etc.", $tags="", $link="")
     }
 
   }
 
-  Deployment_Node(Live.Bank.bankdb02, "bank-db02", $type="Ubuntu 16.04 LTS", $tags="", $link="") {
-    Deployment_Node(Live.Bank.bankdb02.OracleSecondary, "Oracle - Secondary", $type="Oracle 12c", $tags="", $link="") {
+  Deployment_Node(Live.Bank.bankdb02, "bank-db02", $type="Ubuntu 16.04 LTS", $descr="", $tags="", $link="") {
+    Deployment_Node(Live.Bank.bankdb02.OracleSecondary, "Oracle - Secondary", $type="Oracle 12c", $descr="", $tags="", $link="") {
       ContainerDb(Live.Bank.bankdb02.OracleSecondary.Database_1, "Database", $techn="Oracle Database Schema", $descr="Stores user registration information, hashed authentication credentials, access logs, etc.", $tags="", $link="")
     }
 
   }
 
-  Deployment_Node(Live.Bank.bankprod001, "bank-prod001", $type="", $tags="", $link="") {
+  Deployment_Node(Live.Bank.bankprod001, "bank-prod001", $type="", $descr="", $tags="", $link="") {
     System(Live.Bank.bankprod001.BankingSystem_1, "Banking System", $descr="Stores all of the core banking information about citizens, accounts, transactions, etc.", $tags="", $link="")
   }
 
 }
 
-Rel_D(Live.Bank.bankweb.ApacheTomcat.WebApplication_1, Live.Citizenscomputer.WebBrowser.SinglePageApplication_1, "Delivers to the citizen's web browser", $techn="", $tags="", $link="")
-Rel_D(Live.Citizensmobiledevice.MobileApp_1, Live.Bank.bankapi.ApacheTomcat.APIApplication_1, "Makes API calls to", $techn="JSON/HTTPS", $tags="", $link="")
-Rel_D(Live.Citizenscomputer.WebBrowser.SinglePageApplication_1, Live.Bank.bankapi.ApacheTomcat.APIApplication_1, "Makes API calls to", $techn="JSON/HTTPS", $tags="", $link="")
-Rel_D(Live.Bank.bankapi.ApacheTomcat.APIApplication_1, Live.Bank.bankdb01.OraclePrimary.Database_1, "Reads from and writes to", $techn="JDBC", $tags="", $link="")
-Rel_D(Live.Bank.bankapi.ApacheTomcat.APIApplication_1, Live.Bank.bankdb02.OracleSecondary.Database_1, "Reads from and writes to", $techn="JDBC", $tags="", $link="")
-Rel_D(Live.Bank.bankapi.ApacheTomcat.APIApplication_1, Live.Bank.bankprod001.BankingSystem_1, "Makes API calls to", $techn="XML/HTTPS", $tags="", $link="")
-Rel_D(Live.Bank.bankdb01.OraclePrimary, Live.Bank.bankdb02.OracleSecondary, "Replicates data to", $techn="", $tags="", $link="")
+Rel(Live.Bank.bankweb.ApacheTomcat.WebApplication_1, Live.Citizenscomputer.WebBrowser.SinglePageApplication_1, "Delivers to the citizen's web browser", $techn="", $tags="", $link="")
+Rel(Live.Citizensmobiledevice.MobileApp_1, Live.Bank.bankapi.ApacheTomcat.APIApplication_1, "Makes API calls to", $techn="JSON/HTTPS", $tags="", $link="")
+Rel(Live.Citizenscomputer.WebBrowser.SinglePageApplication_1, Live.Bank.bankapi.ApacheTomcat.APIApplication_1, "Makes API calls to", $techn="JSON/HTTPS", $tags="", $link="")
+Rel(Live.Bank.bankapi.ApacheTomcat.APIApplication_1, Live.Bank.bankdb01.OraclePrimary.Database_1, "Reads from and writes to", $techn="JDBC", $tags="", $link="")
+Rel(Live.Bank.bankapi.ApacheTomcat.APIApplication_1, Live.Bank.bankdb02.OracleSecondary.Database_1, "Reads from and writes to", $techn="JDBC", $tags="", $link="")
+Rel(Live.Bank.bankapi.ApacheTomcat.APIApplication_1, Live.Bank.bankprod001.BankingSystem_1, "Makes API calls to", $techn="XML/HTTPS", $tags="", $link="")
+Rel(Live.Bank.bankdb01.OraclePrimary, Live.Bank.bankdb02.OracleSecondary, "Replicates data to", $techn="", $tags="", $link="")
 
 SHOW_LEGEND(true)
 @enduml

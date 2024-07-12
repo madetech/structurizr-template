@@ -1,12 +1,15 @@
 <!doctype html>
-<html lang="en" class="has-background-light">
+<html lang="en" data-theme="light" class="has-background-light">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Embedding diagrams and images | Government Body</title>
-    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css" rel="stylesheet">
     <link href="../../style.css" rel="stylesheet">
     <link href="./../style-branding.css" rel="stylesheet">
+    <script type="text/javascript" src="../../modal.js"></script>
+    <script type="text/javascript" src="../../svg-modal.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
   </head>
   <body>
     <script type="text/javascript" src="../../header.js"></script>
@@ -14,7 +17,7 @@
       <div class="navbar-brand has-site-branding"><a href="../" class="navbar-item"><span class="has-text-weight-semibold has-site-branding">Government Body</span></a></div>
       <div class="navbar-menu has-site-branding">
         <div class="navbar-end">
-          <div class="navbar-item"><input class="input is-small is-rounded has-site-branding" id="search" type="search" size="30" maxlength="50" placeholder="Search (requires 3 characters)..." onkeyup="redirect(event, value, '../search/')"></div>
+          <div class="navbar-item"><input class="input is-small is-rounded has-site-branding" id="search" type="search" size="30" maxlength="50" placeholder="Search..." onkeyup="redirect(event, value, '../search/')"></div>
           <div class="navbar-item has-dropdown is-hoverable"><a class="navbar-link has-site-branding">main</a>
             <div class="navbar-dropdown is-right"><a href="../../main/" class="navbar-item">main</a>
               <hr class="navbar-divider">
@@ -32,7 +35,7 @@
         </ul>
         <p class="menu-label">Software systems</p>
         <ul class="menu-list has-site-branding">
-          <li><a href="../banking-system/" class="">Banking System</a><a href="../government-department/" class="">Government Department</a></li>
+          <li><a href="../banking-system/" class="">Banking System</a><a href="../government-department/" class="">Government Department</a><a href="../govnotify/" class="">GovNotify</a></li>
         </ul>
       </aside>
       <div class="container is-fluid has-background-white">
@@ -50,584 +53,561 @@
   <figure style="width: min(100%, 885px);">
    <div>
     <!--?xml version="1.0" encoding="us-ascii" standalone="no"?-->
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" preserveaspectratio="meet" version="1.1" viewbox="0 0 885 1037" zoomandpan="magnify">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" preserveAspectRatio="meet" version="1.1" viewBox="0 0 885 1007" zoomAndPan="magnify">
      <defs /><g>
-      <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthadjust="spacing" textlength="131" x="370" y="23.5352">
-       System Landscape
-      </text><!--cluster enterprise-->
-      <g id="cluster_enterprise">
-       <rect fill="none" height="469.39" rx="2.5" ry="2.5" style="stroke:#444444;stroke-width:1.0;stroke-dasharray:7.0,7.0;" width="872" x="7" y="418.6183" />
-       <text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="145" x="370.5" y="436.087">
-        Government Body
-       </text>
-       <text fill="#444444" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="71" x="407.5" y="451.0636">
-        [Enterprise]
-       </text>
+      <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="131" x="370" y="23.5352">System Landscape</text><!--cluster group_1-->
+      <g id="cluster_group_1">
+       <rect fill="none" height="455.39" rx="2.5" ry="2.5" style="stroke:#CCCCCC;stroke-width:1.0;stroke-dasharray:7.0,7.0;" width="872" x="7" y="418.6183" />
+       <text fill="#CCCCCC" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="145" x="370.5" y="436.087">Government Body</text>
       </g><!--entity CitizenServiceStaff-->
       <g id="elem_CitizenServiceStaff">
-       <rect fill="#08427B" height="156.7969" rx="2.5" ry="2.5" style="stroke:#073B6F;stroke-width:0.5;" width="229" x="23.5" y="479.7683" />
-       <image height="48" width="48" x="114" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACMElEQVR4Xu2YvUrFQBCFb+kj+Ai+gq3Y2PgA+gCCtZ2V2AhqaSNiqY1gYWMjaCvXykoEKy21sLCNfELgMscksz8mWfDAB3Kuye7sTmYnmcwtbU9KRozSECOVla3T6uTqvrqZPlcPT68/XNw+VtvH19XC+sGe/f9UxIhl8/Cy+vj8qrpEYIsbR1N7fSxihDK/urvMKoeKHbH3ikGMEJi8Z9WbtH92lxyEGCHErLwVqWfvG4IYXkiBXGIn7f29iOGBAe0kUkTVsmN4EcMD255bdgwvYnigFOYW54cdx4MYHlIqT5Niy6oYHuzgORRbUsXwYAfPoV4DeHl7t+MnK/Y8EMMDzVlu9foQ5y6jFAU7hhcxvOSsRLH5D2J4KbqVqMlxoK3tnEevPogRAiuXUpFiD69ZxIghZidSV75GjFiYkGc3KMEpOW8RIxXed0kNJsrOAO0ypTfnxGvEKA0xSkMMD3zfIedJFQ4hCPlUwrX1daQWbURseonRBhNue1D5rc53JkVQwN9c21Wt+D20JxLjN7hpztahSwTi3RExLDlbhhCxm55PkWLMkrvrDBW73rUTYtSQu/aGQ4h0snNzBdD1wPWptrZDDBjL6tfiebBzbA2AUjg2NT3QYkBbrR9KTS/9YoC9eAxqeu0UI/eH21yiu7VzLSqApnIqxn8Af6TiA3A/A9Bn5+lV0xcMMWDoJs6qrakTo4a6OwZxqLa97YkxC1HzMkMzNQRtE3cFUAJilMY3OGTNL0NDLqIAAAAASUVORK5CYII=" y="489.7683" />
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="56" x="57.5" y="553.237">
-        Citizen
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="5" x="113.5" y="553.237">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="57" x="118.5" y="553.237">
-        Service
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="5" x="175.5" y="553.237">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="38" x="180.5" y="553.237">
-        Staff
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="136" y="570.1472">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="48" x="48.5" y="586.6355">
-        Citizen
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="96.5" y="586.6355">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="47" x="100.5" y="586.6355">
-        service
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="147.5" y="586.6355">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="30" x="151.5" y="586.6355">
-        staff
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="181.5" y="586.6355">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="42" x="185.5" y="586.6355">
-        within
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="22" x="81" y="603.1238">
-        the
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="103" y="603.1238">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="88" x="107" y="603.1238">
-        Government.
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="58" x="37.5" y="621.612">
-        Location
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthadjust="spacing" textlength="133" x="104.5" y="621.612">
-        Customer Services
-       </text>
-       <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="33.5" x2="242.5" y1="608.0769" y2="608.0769" />
-       <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="33.5" x2="242.5" y1="624.5652" y2="624.5652" />
-       <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="33.5" x2="33.5" y1="608.0769" y2="624.5652" />
-       <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="99.5" x2="99.5" y1="608.0769" y2="624.5652" />
-       <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="242.5" x2="242.5" y1="608.0769" y2="624.5652" />
+       <rect fill="#08427B" height="156.7969" rx="2.5" ry="2.5" style="stroke:#073B6F;stroke-width:0.5;" width="229" x="23.5" y="465.7683" />
+       <image height="48" width="48" x="114" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACMElEQVR4Xu2YvUrFQBCFb+kj+Ai+gq3Y2PgA+gCCtZ2V2AhqaSNiqY1gYWMjaCvXykoEKy21sLCNfELgMscksz8mWfDAB3Kuye7sTmYnmcwtbU9KRozSECOVla3T6uTqvrqZPlcPT68/XNw+VtvH19XC+sGe/f9UxIhl8/Cy+vj8qrpEYIsbR1N7fSxihDK/urvMKoeKHbH3ikGMEJi8Z9WbtH92lxyEGCHErLwVqWfvG4IYXkiBXGIn7f29iOGBAe0kUkTVsmN4EcMD255bdgwvYnigFOYW54cdx4MYHlIqT5Niy6oYHuzgORRbUsXwYAfPoV4DeHl7t+MnK/Y8EMMDzVlu9foQ5y6jFAU7hhcxvOSsRLH5D2J4KbqVqMlxoK3tnEevPogRAiuXUpFiD69ZxIghZidSV75GjFiYkGc3KMEpOW8RIxXed0kNJsrOAO0ypTfnxGvEKA0xSkMMD3zfIedJFQ4hCPlUwrX1daQWbURseonRBhNue1D5rc53JkVQwN9c21Wt+D20JxLjN7hpztahSwTi3RExLDlbhhCxm55PkWLMkrvrDBW73rUTYtSQu/aGQ4h0snNzBdD1wPWptrZDDBjL6tfiebBzbA2AUjg2NT3QYkBbrR9KTS/9YoC9eAxqeu0UI/eH21yiu7VzLSqApnIqxn8Af6TiA3A/A9Bn5+lV0xcMMWDoJs6qrakTo4a6OwZxqLa97YkxC1HzMkMzNQRtE3cFUAJilMY3OGTNL0NDLqIAAAAASUVORK5CYII=" y="475.7683" />
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="56" x="57.5" y="539.237">Citizen</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="5" x="113.5" y="539.237">&nbsp;</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="57" x="118.5" y="539.237">Service</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="5" x="175.5" y="539.237">&nbsp;</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="38" x="180.5" y="539.237">Staff</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="136" y="556.1472">&nbsp;</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="48.5" y="572.6355">Citizen</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="96.5" y="572.6355">&nbsp;</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47" x="100.5" y="572.6355">service</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="147.5" y="572.6355">&nbsp;</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="30" x="151.5" y="572.6355">staff</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="181.5" y="572.6355">&nbsp;</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="185.5" y="572.6355">within</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="81" y="589.1238">the</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="103" y="589.1238">&nbsp;</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="107" y="589.1238">Government.</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="37.5" y="607.612">Location</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="133" x="104.5" y="607.612">Customer Services</text>
+       <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="33.5" x2="242.5" y1="594.0769" y2="594.0769" />
+       <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="33.5" x2="242.5" y1="610.5652" y2="610.5652" />
+       <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="33.5" x2="33.5" y1="594.0769" y2="610.5652" />
+       <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="99.5" x2="99.5" y1="594.0769" y2="610.5652" />
+       <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="242.5" x2="242.5" y1="594.0769" y2="610.5652" />
       </g><!--entity BackOfficeStaff-->
       <g id="elem_BackOfficeStaff">
-       <rect fill="#08427B" height="156.7969" rx="2.5" ry="2.5" style="stroke:#073B6F;stroke-width:0.5;" width="215" x="287.5" y="479.7683" />
-       <image height="48" width="48" x="371" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACMElEQVR4Xu2YvUrFQBCFb+kj+Ai+gq3Y2PgA+gCCtZ2V2AhqaSNiqY1gYWMjaCvXykoEKy21sLCNfELgMscksz8mWfDAB3Kuye7sTmYnmcwtbU9KRozSECOVla3T6uTqvrqZPlcPT68/XNw+VtvH19XC+sGe/f9UxIhl8/Cy+vj8qrpEYIsbR1N7fSxihDK/urvMKoeKHbH3ikGMEJi8Z9WbtH92lxyEGCHErLwVqWfvG4IYXkiBXGIn7f29iOGBAe0kUkTVsmN4EcMD255bdgwvYnigFOYW54cdx4MYHlIqT5Niy6oYHuzgORRbUsXwYAfPoV4DeHl7t+MnK/Y8EMMDzVlu9foQ5y6jFAU7hhcxvOSsRLH5D2J4KbqVqMlxoK3tnEevPogRAiuXUpFiD69ZxIghZidSV75GjFiYkGc3KMEpOW8RIxXed0kNJsrOAO0ypTfnxGvEKA0xSkMMD3zfIedJFQ4hCPlUwrX1daQWbURseonRBhNue1D5rc53JkVQwN9c21Wt+D20JxLjN7hpztahSwTi3RExLDlbhhCxm55PkWLMkrvrDBW73rUTYtSQu/aGQ4h0snNzBdD1wPWptrZDDBjL6tfiebBzbA2AUjg2NT3QYkBbrR9KTS/9YoC9eAxqeu0UI/eH21yiu7VzLSqApnIqxn8Af6TiA3A/A9Bn5+lV0xcMMWDoJs6qrakTo4a6OwZxqLa97YkxC1HzMkMzNQRtE3cFUAJilMY3OGTNL0NDLqIAAAAASUVORK5CYII=" y="489.7683" />
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="38" x="327" y="553.237">
-        Back
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="5" x="365" y="553.237">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="50" x="370" y="553.237">
-        Office
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="5" x="420" y="553.237">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="38" x="425" y="553.237">
-        Staff
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="393" y="570.1472">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="102" x="300" y="586.6355">
-        Administration
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="402" y="586.6355">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="26" x="406" y="586.6355">
-        and
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="432" y="586.6355">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="54" x="436" y="586.6355">
-        support
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="30" x="323" y="603.1238">
-        staff
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="353" y="603.1238">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="42" x="357" y="603.1238">
-        within
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="399" y="603.1238">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="22" x="403" y="603.1238">
-        the
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="425" y="603.1238">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="38" x="429" y="603.1238">
-        bank.
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="58" x="301.5" y="621.612">
-        Location
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthadjust="spacing" textlength="119" x="368.5" y="621.612">
-        Internal Services
-       </text>
-       <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="297.5" x2="492.5" y1="608.0769" y2="608.0769" />
-       <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="297.5" x2="492.5" y1="624.5652" y2="624.5652" />
-       <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="297.5" x2="297.5" y1="608.0769" y2="624.5652" />
-       <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="363.5" x2="363.5" y1="608.0769" y2="624.5652" />
-       <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="492.5" x2="492.5" y1="608.0769" y2="624.5652" />
+       <rect fill="#08427B" height="156.7969" rx="2.5" ry="2.5" style="stroke:#073B6F;stroke-width:0.5;" width="215" x="287.5" y="465.7683" />
+       <image height="48" width="48" x="371" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACMElEQVR4Xu2YvUrFQBCFb+kj+Ai+gq3Y2PgA+gCCtZ2V2AhqaSNiqY1gYWMjaCvXykoEKy21sLCNfELgMscksz8mWfDAB3Kuye7sTmYnmcwtbU9KRozSECOVla3T6uTqvrqZPlcPT68/XNw+VtvH19XC+sGe/f9UxIhl8/Cy+vj8qrpEYIsbR1N7fSxihDK/urvMKoeKHbH3ikGMEJi8Z9WbtH92lxyEGCHErLwVqWfvG4IYXkiBXGIn7f29iOGBAe0kUkTVsmN4EcMD255bdgwvYnigFOYW54cdx4MYHlIqT5Niy6oYHuzgORRbUsXwYAfPoV4DeHl7t+MnK/Y8EMMDzVlu9foQ5y6jFAU7hhcxvOSsRLH5D2J4KbqVqMlxoK3tnEevPogRAiuXUpFiD69ZxIghZidSV75GjFiYkGc3KMEpOW8RIxXed0kNJsrOAO0ypTfnxGvEKA0xSkMMD3zfIedJFQ4hCPlUwrX1daQWbURseonRBhNue1D5rc53JkVQwN9c21Wt+D20JxLjN7hpztahSwTi3RExLDlbhhCxm55PkWLMkrvrDBW73rUTYtSQu/aGQ4h0snNzBdD1wPWptrZDDBjL6tfiebBzbA2AUjg2NT3QYkBbrR9KTS/9YoC9eAxqeu0UI/eH21yiu7VzLSqApnIqxn8Af6TiA3A/A9Bn5+lV0xcMMWDoJs6qrakTo4a6OwZxqLa97YkxC1HzMkMzNQRtE3cFUAJilMY3OGTNL0NDLqIAAAAASUVORK5CYII=" y="475.7683" />
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="38" x="327" y="539.237">Back</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="5" x="365" y="539.237">&nbsp;</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="50" x="370" y="539.237">Office</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="5" x="420" y="539.237">&nbsp;</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="38" x="425" y="539.237">Staff</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="393" y="556.1472">&nbsp;</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="102" x="300" y="572.6355">Administration</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="402" y="572.6355">&nbsp;</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="26" x="406" y="572.6355">and</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="432" y="572.6355">&nbsp;</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54" x="436" y="572.6355">support</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="30" x="323" y="589.1238">staff</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="353" y="589.1238">&nbsp;</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="357" y="589.1238">within</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="399" y="589.1238">&nbsp;</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="403" y="589.1238">the</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="425" y="589.1238">&nbsp;</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="429" y="589.1238">bank.</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="301.5" y="607.612">Location</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="119" x="368.5" y="607.612">Internal Services</text>
+       <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="297.5" x2="492.5" y1="594.0769" y2="594.0769" />
+       <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="297.5" x2="492.5" y1="610.5652" y2="610.5652" />
+       <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="297.5" x2="297.5" y1="594.0769" y2="610.5652" />
+       <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="363.5" x2="363.5" y1="594.0769" y2="610.5652" />
+       <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="492.5" x2="492.5" y1="594.0769" y2="610.5652" />
       </g><!--entity BankingSystem-->
       <g id="elem_BankingSystem">
-       <a href="../banking-system/context/" target="_top" title="../banking-system/context/" xlink:actuate="onRequest" xlink:href="../banking-system/context/" xlink:show="new" xlink:title="../banking-system/context/" xlink:type="simple"><rect fill="#1168BD" height="121.2852" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="205" x="292.5" y="750.7183" /><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="67" x="330" y="776.187">
-         Banking
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="5" x="397" y="776.187">
-         &nbsp;
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="58" x="402" y="776.187">
-         System
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="393" y="793.0972">
-         &nbsp;
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="43" x="324.5" y="809.5855">
-         Stores
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="367.5" y="809.5855">
-         &nbsp;
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="16" x="371.5" y="809.5855">
-         all
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="387.5" y="809.5855">
-         &nbsp;
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="14" x="391.5" y="809.5855">
-         of
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="405.5" y="809.5855">
-         &nbsp;
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="22" x="409.5" y="809.5855">
-         the
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="431.5" y="809.5855">
-         &nbsp;
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="30" x="435.5" y="809.5855">
-         core
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="56" x="302.5" y="826.0738">
-         banking
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="358.5" y="826.0738">
-         &nbsp;
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="81" x="362.5" y="826.0738">
-         information
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="443.5" y="826.0738">
-         &nbsp;
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="40" x="447.5" y="826.0738">
-         about
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="56" x="332.5" y="842.562">
-         citizens,
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="388.5" y="842.562">
-         &nbsp;
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="65" x="392.5" y="842.562">
-         accounts,
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="88" x="337" y="859.0503">
-         transactions,
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="425" y="859.0503">
-         &nbsp;
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="24" x="429" y="859.0503">
-         etc.
-        </text></a>
+       <a href="../banking-system/context/" target="_top" title="../banking-system/context/" xlink:actuate="onRequest" xlink:href="../banking-system/context/" xlink:show="new" xlink:title="../banking-system/context/" xlink:type="simple">
+        <rect fill="#1168BD" height="121.2852" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="205" x="292.5" y="736.7183" />
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="67" x="330" y="762.187">Banking</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="5" x="397" y="762.187">&nbsp;</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="58" x="402" y="762.187">System</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="393" y="779.0972">&nbsp;</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="43" x="324.5" y="795.5855">Stores</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="367.5" y="795.5855">&nbsp;</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="16" x="371.5" y="795.5855">all</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="387.5" y="795.5855">&nbsp;</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="14" x="391.5" y="795.5855">of</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="405.5" y="795.5855">&nbsp;</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="409.5" y="795.5855">the</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="431.5" y="795.5855">&nbsp;</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="30" x="435.5" y="795.5855">core</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="302.5" y="812.0738">banking</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="358.5" y="812.0738">&nbsp;</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="362.5" y="812.0738">information</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="443.5" y="812.0738">&nbsp;</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="447.5" y="812.0738">about</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="332.5" y="828.562">citizens,</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="388.5" y="828.562">&nbsp;</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="65" x="392.5" y="828.562">accounts,</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="337" y="845.0503">transactions,</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="425" y="845.0503">&nbsp;</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="24" x="429" y="845.0503">etc.</text>
+       </a>
       </g><!--entity GovernmentDepartment-->
       <g id="elem_GovernmentDepartment">
-       <a href="../government-department/context/" target="_top" title="../government-department/context/" xlink:actuate="onRequest" xlink:href="../government-department/context/" xlink:show="new" xlink:title="../government-department/context/" xlink:type="simple"><rect fill="#1168BD" height="177.1055" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="325" x="537.5" y="469.6183" /><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="100" x="650" y="495.087">
-         Government
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="97" x="651.5" y="513.9308">
-         Department
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="698" y="530.8409">
-         &nbsp;
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="45" x="623.5" y="547.3292">
-         Allows
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="668.5" y="547.3292">
-         &nbsp;
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="52" x="672.5" y="547.3292">
-         citizens
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="724.5" y="547.3292">
-         &nbsp;
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="14" x="728.5" y="547.3292">
-         to
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="742.5" y="547.3292">
-         &nbsp;
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="30" x="746.5" y="547.3292">
-         view
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="81" x="619.5" y="563.8175">
-         information
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="700.5" y="563.8175">
-         &nbsp;
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="40" x="704.5" y="563.8175">
-         about
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="744.5" y="563.8175">
-         &nbsp;
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="32" x="748.5" y="563.8175">
-         their
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="65" x="632" y="580.3058">
-         accounts,
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="697" y="580.3058">
-         &nbsp;
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="26" x="701" y="580.3058">
-         and
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="727" y="580.3058">
-         &nbsp;
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="37" x="731" y="580.3058">
-         make
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="70" x="665" y="596.7941">
-         payments.
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="132" x="551.5" y="615.2823">
-         Development Team
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthadjust="spacing" textlength="155" x="692.5" y="615.2823">
-         Dev/Internet Services
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="45" x="551.5" y="631.7706">
-         Owner
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthadjust="spacing" textlength="133" x="692.5" y="631.7706">
-         Customer Services
-        </text><line style="stroke:#FFFFFF;stroke-width:0.5;" x1="547.5" x2="852.5" y1="601.7472" y2="601.7472" /><line style="stroke:#FFFFFF;stroke-width:0.5;" x1="547.5" x2="852.5" y1="618.2355" y2="618.2355" /><line style="stroke:#FFFFFF;stroke-width:0.5;" x1="547.5" x2="852.5" y1="634.7238" y2="634.7238" /><line style="stroke:#FFFFFF;stroke-width:0.5;" x1="547.5" x2="547.5" y1="601.7472" y2="634.7238" /><line style="stroke:#FFFFFF;stroke-width:0.5;" x1="687.5" x2="687.5" y1="601.7472" y2="634.7238" /><line style="stroke:#FFFFFF;stroke-width:0.5;" x1="852.5" x2="852.5" y1="601.7472" y2="634.7238" /></a>
+       <a href="../government-department/context/" target="_top" title="../government-department/context/" xlink:actuate="onRequest" xlink:href="../government-department/context/" xlink:show="new" xlink:title="../government-department/context/" xlink:type="simple">
+        <rect fill="#1168BD" height="177.1055" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="325" x="537.5" y="455.6183" />
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="100" x="650" y="481.087">Government</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="97" x="651.5" y="499.9308">Department</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="698" y="516.8409">&nbsp;</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="45" x="623.5" y="533.3292">Allows</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="668.5" y="533.3292">&nbsp;</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="672.5" y="533.3292">citizens</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="724.5" y="533.3292">&nbsp;</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="14" x="728.5" y="533.3292">to</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="742.5" y="533.3292">&nbsp;</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="30" x="746.5" y="533.3292">view</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="619.5" y="549.8175">information</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="700.5" y="549.8175">&nbsp;</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="704.5" y="549.8175">about</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="744.5" y="549.8175">&nbsp;</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="748.5" y="549.8175">their</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="65" x="632" y="566.3058">accounts,</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="697" y="566.3058">&nbsp;</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="26" x="701" y="566.3058">and</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="727" y="566.3058">&nbsp;</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="37" x="731" y="566.3058">make</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="665" y="582.7941">payments.</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="132" x="551.5" y="601.2823">Development Team</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="155" x="692.5" y="601.2823">Dev/Internet Services</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="45" x="551.5" y="617.7706">Owner</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="133" x="692.5" y="617.7706">Customer Services</text>
+        <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="547.5" x2="852.5" y1="587.7472" y2="587.7472" />
+        <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="547.5" x2="852.5" y1="604.2355" y2="604.2355" />
+        <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="547.5" x2="852.5" y1="620.7238" y2="620.7238" />
+        <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="547.5" x2="547.5" y1="587.7472" y2="620.7238" />
+        <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="687.5" x2="687.5" y1="587.7472" y2="620.7238" />
+        <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="852.5" x2="852.5" y1="587.7472" y2="620.7238" />
+       </a>
       </g><!--entity Citizen-->
       <g id="elem_Citizen">
-       <rect fill="#686868" height="119.8203" rx="2.5" ry="2.5" style="stroke:#8A8A8A;stroke-width:0.5;" width="181" x="435.5" y="208.7983" />
-       <image height="48" width="48" x="502" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACE0lEQVR4Xu2YMW/CMBCF++P6Y5iZmVFHZmZmZmbmzMzMzOypvkqW0L3GOdvXEEt90idVjyb22ZfzJR+bzeajZ8ToDTFaORwO4/V6HW+323i/338YhmE8n8/jbrf7sv/fihi1nE6n8fl8jnMisP1+P9jraxGjlO12+8kql4odsfeqQYwSmLxn1ad0uVyagxCjhJqVtyL17H1LEMMLKRAldtLe34sYHhjQTqJFVC07hhcxPLDt0bJjeBHDA6UwWpwfdhwPYnhoqTxTqi2rYniwg0eotqSK4cEOHqFFA3g8Hnb8ZtWeB2J4oDmL1qIPcXQZpSjYMbyI4SWyEtXmP4jhpetWIhFxoB2Px+rVBzFKYOVaKlLt4fWKGDXU7ETryifEqIUJeXaDEtyS8xYxWuF9l9RgouwM0C5TeiMnnhCjN8ToDTE88H2HnCdVOISg5FMJ16brSC3aiNr0EiMHE849qPyW8p1JERTwN9fOVSt+L+2JxPgNbhrZOsyJQLw7IoYlsmUoEbvp+RQpxivRXWep2PW5nRAjQe7aG75DpJOdmyuAuQduSeXaDjFgLaufxPNg55gNgFK4Nk090GJArta/S1Mv/WKAvXgNmnrtFCP6w22U6G7tXLsKYKqcivEfwB+p+wDczwAs2Xl6NfUFQwx4dxNnlWvqxEhQd9cgDtXc254YrxA1LzM0U+8gN3FXAD0gRm98A/FFFW2vidUFAAAAAElFTkSuQmCC" y="218.7983" />
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="56" x="498" y="282.267">
-        Citizen
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="524" y="299.1772">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="10" x="445.5" y="315.6655">
-        A
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="455.5" y="315.6655">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="57" x="459.5" y="315.6655">
-        member
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="516.5" y="315.6655">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="14" x="520.5" y="315.6655">
-        of
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="534.5" y="315.6655">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="22" x="538.5" y="315.6655">
-        the
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="560.5" y="315.6655">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="42" x="564.5" y="315.6655">
-        public
-       </text>
+       <rect fill="#08427B" height="119.8203" rx="2.5" ry="2.5" style="stroke:#073B6F;stroke-width:0.5;" width="181" x="435.5" y="208.7983" />
+       <image height="48" width="48" x="502" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACMElEQVR4Xu2YvUrFQBCFb+kj+Ai+gq3Y2PgA+gCCtZ2V2AhqaSNiqY1gYWMjaCvXykoEKy21sLCNfELgMscksz8mWfDAB3Kuye7sTmYnmcwtbU9KRozSECOVla3T6uTqvrqZPlcPT68/XNw+VtvH19XC+sGe/f9UxIhl8/Cy+vj8qrpEYIsbR1N7fSxihDK/urvMKoeKHbH3ikGMEJi8Z9WbtH92lxyEGCHErLwVqWfvG4IYXkiBXGIn7f29iOGBAe0kUkTVsmN4EcMD255bdgwvYnigFOYW54cdx4MYHlIqT5Niy6oYHuzgORRbUsXwYAfPoV4DeHl7t+MnK/Y8EMMDzVlu9foQ5y6jFAU7hhcxvOSsRLH5D2J4KbqVqMlxoK3tnEevPogRAiuXUpFiD69ZxIghZidSV75GjFiYkGc3KMEpOW8RIxXed0kNJsrOAO0ypTfnxGvEKA0xSkMMD3zfIedJFQ4hCPlUwrX1daQWbURseonRBhNue1D5rc53JkVQwN9c21Wt+D20JxLjN7hpztahSwTi3RExLDlbhhCxm55PkWLMkrvrDBW73rUTYtSQu/aGQ4h0snNzBdD1wPWptrZDDBjL6tfiebBzbA2AUjg2NT3QYkBbrR9KTS/9YoC9eAxqeu0UI/eH21yiu7VzLSqApnIqxn8Af6TiA3A/A9Bn5+lV0xcMMWDoJs6qrakTo4a6OwZxqLa97YkxC1HzMkMzNQRtE3cFUAJilMY3OGTNL0NDLqIAAAAASUVORK5CYII=" y="218.7983" />
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="56" x="498" y="282.267">Citizen</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="524" y="299.1772">&nbsp;</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="10" x="445.5" y="315.6655">A</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="455.5" y="315.6655">&nbsp;</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="459.5" y="315.6655">member</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="516.5" y="315.6655">&nbsp;</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="14" x="520.5" y="315.6655">of</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="534.5" y="315.6655">&nbsp;</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="538.5" y="315.6655">the</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="560.5" y="315.6655">&nbsp;</text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="564.5" y="315.6655">public</text>
       </g><!--entity GovNotify-->
       <g id="elem_GovNotify">
-       <rect fill="#999999" height="88.3086" rx="2.5" ry="2.5" style="stroke:#8A8A8A;stroke-width:0.5;" width="210" x="508" y="44.4883" />
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="80" x="573" y="69.957">
-        GovNotify
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="611" y="86.8672">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="26" x="518" y="103.3555">
-        The
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="544" y="103.3555">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="84" x="548" y="103.3555">
-        Government
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="632" y="103.3555">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="48" x="636" y="103.3555">
-        Service
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="684" y="103.3555">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="20" x="688" y="103.3555">
-        for
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="55" x="553.5" y="119.8438">
-        sending
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="608.5" y="119.8438">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="60" x="612.5" y="119.8438">
-        e-maills.
-       </text>
+       <a href="../govnotify/context/" target="_top" title="../govnotify/context/" xlink:actuate="onRequest" xlink:href="../govnotify/context/" xlink:show="new" xlink:title="../govnotify/context/" xlink:type="simple">
+        <rect fill="#1168BD" height="88.3086" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="210" x="508" y="44.4883" />
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="80" x="573" y="69.957">GovNotify</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="611" y="86.8672">&nbsp;</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="26" x="518" y="103.3555">The</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="544" y="103.3555">&nbsp;</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="548" y="103.3555">Government</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="632" y="103.3555">&nbsp;</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="636" y="103.3555">Service</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="684" y="103.3555">&nbsp;</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="20" x="688" y="103.3555">for</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="553.5" y="119.8438">sending</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="608.5" y="119.8438">&nbsp;</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="60" x="612.5" y="119.8438">e-maills.</text>
+       </a>
       </g><!--link Citizen to GovernmentDepartment-->
       <g id="link_Citizen_GovernmentDepartment">
-       <path d="M513.81,328.8583 C511.61,352.7183 512.69,379.9283 523,402.6183 C533.16,424.9783 548.33,445.3583 565.59,463.4683 " fill="none" id="Citizen-to-GovernmentDepartment" style="stroke:#666666;stroke-width:1.0;" />
-       <polygon fill="#666666" points="570.51,468.5283,567.0532,460.7148,562.7679,464.9144,570.51,468.5283" style="stroke:#666666;stroke-width:1.0;" />
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="36" x="524" y="371.2198">
-        Views
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="560" y="371.2198">
-        &nbsp;
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="48" x="564" y="371.2198">
-        account
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="612" y="371.2198">
-        &nbsp;
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="57" x="616" y="371.2198">
-        balances,
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="23" x="532" y="385.3527">
-        and
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="555" y="385.3527">
-        &nbsp;
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="41" x="559" y="385.3527">
-        makes
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="600" y="385.3527">
-        &nbsp;
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="61" x="604" y="385.3527">
-        payments
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="35" x="581" y="399.4855">
-        using
-       </text>
+       <path d="M513.28,329.1083 C511,353.0083 512.16,380.1683 523,402.6183 C532.38,422.0483 540.2842,433.9405 555.7242,449.5505 " fill="none" id="Citizen-to-GovernmentDepartment" style="stroke:#666666;stroke-width:1.0;" />
+       <polygon fill="#666666" points="561.35,455.2383,557.8571,447.4409,553.5913,451.6602,561.35,455.2383" style="stroke:#666666;stroke-width:1.0;" />
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="36" x="524" y="371.2198">Views</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="560" y="371.2198">&nbsp;</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="48" x="564" y="371.2198">account</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="612" y="371.2198">&nbsp;</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="57" x="616" y="371.2198">balances,</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="23" x="532" y="385.3527">and</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="555" y="385.3527">&nbsp;</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="41" x="559" y="385.3527">makes</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="600" y="385.3527">&nbsp;</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="61" x="604" y="385.3527">payments</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="35" x="581" y="399.4855">using</text>
       </g><!--link GovernmentDepartment to BankingSystem-->
       <g id="link_GovernmentDepartment_BankingSystem">
-       <path d="M593.33,647.0283 C554.19,679.2583 510.62,715.1483 474.3,745.0583 " fill="none" id="GovernmentDepartment-to-BankingSystem" style="stroke:#666666;stroke-width:1.0;" />
-       <polygon fill="#666666" points="468.61,750.5683,476.6917,747.7958,472.8759,743.1654,468.61,750.5683" style="stroke:#666666;stroke-width:1.0;" />
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="28" x="589.5" y="689.3198">
-        Gets
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="617.5" y="689.3198">
-        &nbsp;
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="48" x="621.5" y="689.3198">
-        account
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="74" x="560.5" y="703.4527">
-        information
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="634.5" y="703.4527">
-        &nbsp;
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="33" x="638.5" y="703.4527">
-        from,
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="671.5" y="703.4527">
-        &nbsp;
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="23" x="675.5" y="703.4527">
-        and
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="41" x="557" y="717.5855">
-        makes
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="598" y="717.5855">
-        &nbsp;
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="61" x="602" y="717.5855">
-        payments
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="663" y="717.5855">
-        &nbsp;
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="35" x="667" y="717.5855">
-        using
-       </text>
+       <path d="M593.33,633.0283 C551.75,667.2683 511.3448,700.5418 473.7848,731.4818 " fill="none" id="GovernmentDepartment-to-BankingSystem" style="stroke:#666666;stroke-width:1.0;" />
+       <polygon fill="#666666" points="467.61,736.5683,475.6922,733.7974,471.8774,729.1663,467.61,736.5683" style="stroke:#666666;stroke-width:1.0;" />
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="28" x="589.5" y="675.3198">Gets</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="617.5" y="675.3198">&nbsp;</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="48" x="621.5" y="675.3198">account</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="74" x="560.5" y="689.4527">information</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="634.5" y="689.4527">&nbsp;</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="33" x="638.5" y="689.4527">from,</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="671.5" y="689.4527">&nbsp;</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="23" x="675.5" y="689.4527">and</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="41" x="557" y="703.5855">makes</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="598" y="703.5855">&nbsp;</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="61" x="602" y="703.5855">payments</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="663" y="703.5855">&nbsp;</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="35" x="667" y="703.5855">using</text>
       </g><!--link GovernmentDepartment to GovNotify-->
       <g id="link_GovernmentDepartment_GovNotify">
-       <path d="M711.19,469.3183 C718.02,386.9083 718.84,261.8583 678,162.7983 C674.75,154.9083 670.26,147.2883 665.16,140.1583 " fill="none" id="GovernmentDepartment-to-GovNotify" style="stroke:#666666;stroke-width:1.0;" />
-       <polygon fill="#666666" points="659.88,134.1783,662.321,142.3662,667.1029,138.7422,659.88,134.1783" style="stroke:#666666;stroke-width:1.0;" />
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="37" x="713" y="273.3098">
-        Sends
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="750" y="273.3098">
-        &nbsp;
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="42" x="754" y="273.3098">
-        e-mail
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="796" y="273.3098">
-        &nbsp;
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="35" x="800" y="273.3098">
-        using
-       </text>
+       <path d="M710.81,455.3583 C716.98,375.8483 716.99,257.0883 678,162.7983 C673.65,152.2783 672.1192,148.5039 664.8592,139.4339 " fill="none" id="GovernmentDepartment-to-GovNotify" style="stroke:#666666;stroke-width:1.0;" />
+       <polygon fill="#666666" points="659.86,133.1883,662.5171,141.3086,667.2013,137.5592,659.86,133.1883" style="stroke:#666666;stroke-width:1.0;" />
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="37" x="713" y="273.3098">Sends</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="750" y="273.3098">&nbsp;</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="42" x="754" y="273.3098">e-mail</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="796" y="273.3098">&nbsp;</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="35" x="800" y="273.3098">using</text>
       </g><!--link GovNotify to Citizen-->
       <g id="link_GovNotify_Citizen">
-       <path d="M582.16,133.1783 C576.06,142.6983 570.01,152.8983 565,162.7983 C559.03,174.5983 553.47,187.5483 548.54,200.1983 " fill="none" id="GovNotify-to-Citizen" style="stroke:#666666;stroke-width:1.0;" />
-       <polygon fill="#666666" points="545.39,207.4483,551.0496,201.0476,545.4454,198.9045,545.39,207.4483" style="stroke:#666666;stroke-width:1.0;" />
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="37" x="566" y="175.3998">
-        Sends
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="603" y="175.3998">
-        &nbsp;
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="49" x="607" y="175.3998">
-        e-mails
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="656" y="175.3998">
-        &nbsp;
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="13" x="660" y="175.3998">
-        to
-       </text>
+       <path d="M582.16,133.1783 C576.06,142.6983 570.01,152.8983 565,162.7983 C557.72,177.1883 553.8609,185.7846 548.1909,200.9546 " fill="none" id="GovNotify-to-Citizen" style="stroke:#666666;stroke-width:1.0;" />
+       <polygon fill="#666666" points="545.39,208.4483,551.001,202.0049,545.3807,199.9043,545.39,208.4483" style="stroke:#666666;stroke-width:1.0;" />
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="37" x="566" y="175.3998">Sends</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="603" y="175.3998">&nbsp;</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="49" x="607" y="175.3998">e-mails</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="656" y="175.3998">&nbsp;</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="13" x="660" y="175.3998">to</text>
       </g><!--link Citizen to CitizenServiceStaff-->
       <g id="link_Citizen_CitizenServiceStaff">
-       <path d="M435.26,310.3483 C384.13,335.4583 320.59,370.5083 270,410.6183 C247.14,428.7383 224.88,451.0283 205.35,472.7083 " fill="none" id="Citizen-to-CitizenServiceStaff" style="stroke:#666666;stroke-width:1.0;" />
-       <polygon fill="#666666" points="200.38,478.4083,207.9395,474.4266,203.4574,470.4377,200.38,478.4083" style="stroke:#666666;stroke-width:1.0;" />
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="31" x="343" y="378.2198">
-        Asks
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="374" y="378.2198">
-        &nbsp;
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="62" x="378" y="378.2198">
-        questions
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="440" y="378.2198">
-        &nbsp;
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="13" x="444" y="378.2198">
-        to
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="69" x="365.5" y="392.3527">
-        [Telephone]
-       </text>
+       <path d="M435.11,311.7683 C384.38,337.1583 321.27,372.0183 270,410.6183 C248.46,426.8283 232.6798,440.8144 213.5298,459.9444 " fill="none" id="Citizen-to-CitizenServiceStaff" style="stroke:#666666;stroke-width:1.0;" />
+       <polygon fill="#666666" points="207.87,465.5983,215.65,462.0668,211.4096,457.822,207.87,465.5983" style="stroke:#666666;stroke-width:1.0;" />
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="31" x="344" y="378.2198">Asks</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="375" y="378.2198">&nbsp;</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="62" x="379" y="378.2198">questions</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="441" y="378.2198">&nbsp;</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="13" x="445" y="378.2198">to</text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="69" x="366.5" y="392.3527">[Telephone]</text>
       </g><!--link CitizenServiceStaff to BankingSystem-->
       <g id="link_CitizenServiceStaff_BankingSystem">
-       <path d="M217.56,636.9283 C252.81,671.3883 293.83,711.4883 327.55,744.4383 " fill="none" id="CitizenServiceStaff-to-BankingSystem" style="stroke:#666666;stroke-width:1.0;" />
-       <polygon fill="#666666" points="332.76,749.5083,329.1461,741.7662,324.9465,746.0515,332.76,749.5083" style="stroke:#666666;stroke-width:1.0;" />
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="30" x="298" y="703.3198">
-        Uses
-       </text>
+       <path d="M217.56,622.9283 C255,659.5283 293.2386,696.9067 328.0386,730.9167 " fill="none" id="CitizenServiceStaff-to-BankingSystem" style="stroke:#666666;stroke-width:1.0;" />
+       <polygon fill="#666666" points="333.76,736.5083,330.1354,728.7712,325.9417,733.0623,333.76,736.5083" style="stroke:#666666;stroke-width:1.0;" />
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="30" x="298" y="689.3198">Uses</text>
       </g><!--link BackOfficeStaff to BankingSystem-->
       <g id="link_BackOfficeStaff_BankingSystem">
-       <path d="M395,636.9283 C395,670.3783 395,709.1583 395,741.5583 " fill="none" id="BackOfficeStaff-to-BankingSystem" style="stroke:#666666;stroke-width:1.0;" />
-       <polygon fill="#666666" points="395,749.5083,398,741.5083,392,741.5083,395,749.5083" style="stroke:#666666;stroke-width:1.0;" />
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="30" x="396" y="703.3198">
-        Uses
-       </text>
+       <path d="M395,622.9283 C395,659.5283 395,694.4983 395,728.5083 " fill="none" id="BackOfficeStaff-to-BankingSystem" style="stroke:#666666;stroke-width:1.0;" />
+       <polygon fill="#666666" points="395,736.5083,398,728.5083,392,728.5083,395,736.5083" style="stroke:#666666;stroke-width:1.0;" />
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="30" x="396" y="689.3198">Uses</text>
       </g>
-      <rect fill="none" height="16.4883" style="stroke:none;stroke-width:1.0;" width="209" x="645" y="912.0083" />
-      <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthadjust="spacing" textlength="51" x="645" y="925.5434">
-       Legend
-      </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="696" y="925.5434">
-       &nbsp;
-      </text>
-      <rect fill="#08427B" height="16.4883" style="stroke:none;stroke-width:1.0;" width="209" x="645" y="928.4966" />
-      <text fill="#073B6F" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="8" x="649" y="942.0317">
-       ▯
-      </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="657" y="942.0317">
-       &nbsp;
-      </text>
-      <image height="12" width="12" x="661" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAApklEQVR4XmPgcKpmQMfRjcsb/CoWNqCLgzCGwH80gC6Pwjl17RG6+v9T1h47gFPD95+/0dX/33v2DootKBriW1Y2oGvQjesPxKkBhDuW7D8AUxzfunIiujwKRzWyO8ksdXIxjG+XPaNBNqgNuw3IzkAHIL+haNh67MZndEXooGXh3kVwDeiS2MCtx6/BtoA1/P7zF10eA5y69hihAYQNkyY24MMwdQBvKDvWFDAX9QAAAABJRU5ErkJggg==" y="932.9848" />
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="48" x="681" y="942.0317">
-       person
-      </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="733" y="942.0317">
-       &nbsp;
-      </text>
-      <rect fill="#1168BD" height="16.4883" style="stroke:none;stroke-width:1.0;" width="209" x="645" y="944.9848" />
-      <text fill="#3C7FC0" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="8" x="649" y="958.52">
-       ▯
-      </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="657" y="958.52">
-       &nbsp;
-      </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="47" x="665" y="958.52">
-       system
-      </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="716" y="958.52">
-       &nbsp;
-      </text>
-      <rect fill="#686868" height="16.4883" style="stroke:none;stroke-width:1.0;" width="209" x="645" y="961.4731" />
-      <text fill="#8A8A8A" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="8" x="649" y="975.0083">
-       ▯
-      </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="657" y="975.0083">
-       &nbsp;
-      </text>
-      <image height="12" width="12" x="661" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAo0lEQVR4Xn1RsQrDIBTML/YXOmUvLi4quDgWN8Gl3xAcJd+QJZuzezdBbA0Y6iXpwQ3v3d17PhzGcRyQxhiutebYrzw0CgD1rgghoL947+fLQEoJ/WVd125LF7DWcgwwxm6XgUrn3NzM3wFP1LuCUnqXUj5arZTihJDzDb/PQNTbusCyLG80IaZpeu0BFM8QY9y2bIGcM+oH1D/qbhBC8H9svg8Q8WC+Ogq6XQAAAABJRU5ErkJggg==" y="965.9614" />
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="112" x="681" y="975.0083">
-       external_person
-      </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="797" y="975.0083">
-       &nbsp;
-      </text>
-      <rect fill="#999999" height="16.4883" style="stroke:none;stroke-width:1.0;" width="209" x="645" y="977.9614" />
-      <text fill="#8A8A8A" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="8" x="649" y="991.4966">
-       ▯
-      </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="657" y="991.4966">
-       &nbsp;
-      </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="111" x="665" y="991.4966">
-       external_system
-      </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="780" y="991.4966">
-       &nbsp;
-      </text>
-      <rect fill="none" height="16.4883" style="stroke:none;stroke-width:1.0;" width="209" x="645" y="994.4497" />
-      <text fill="#444444" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="8" x="649" y="1007.9848">
-       ▯
-      </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="657" y="1007.9848">
-       &nbsp;
-      </text>
-      <text fill="#444444" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="140" x="665" y="1007.9848">
-       enterprise boundary
-      </text>
-      <text fill="#444444" font-family="sans-serif" font-size="10" lengthadjust="spacing" textlength="41" x="809" y="1008.8286">
-       (dashed)
-      </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="850" y="1007.9848">
-       &nbsp;
-      </text>
-      <line style="stroke:none;stroke-width:1.0;" x1="645" x2="854" y1="912.0083" y2="912.0083" />
-      <line style="stroke:none;stroke-width:1.0;" x1="645" x2="854" y1="928.4966" y2="928.4966" />
-      <line style="stroke:none;stroke-width:1.0;" x1="645" x2="854" y1="944.9848" y2="944.9848" />
-      <line style="stroke:none;stroke-width:1.0;" x1="645" x2="854" y1="961.4731" y2="961.4731" />
-      <line style="stroke:none;stroke-width:1.0;" x1="645" x2="854" y1="977.9614" y2="977.9614" />
-      <line style="stroke:none;stroke-width:1.0;" x1="645" x2="854" y1="994.4497" y2="994.4497" />
-      <line style="stroke:none;stroke-width:1.0;" x1="645" x2="854" y1="1010.938" y2="1010.938" />
-      <line style="stroke:none;stroke-width:1.0;" x1="645" x2="645" y1="912.0083" y2="1010.938" />
-      <line style="stroke:none;stroke-width:1.0;" x1="854" x2="854" y1="912.0083" y2="1010.938" />
+      <rect fill="none" height="16.4883" style="stroke:none;stroke-width:1.0;" width="337" x="517" y="898.0083" />
+      <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="51" x="517" y="911.5434">Legend</text>
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="568" y="911.5434">&nbsp;</text>
+      <rect fill="#08427B" height="16.4883" style="stroke:none;stroke-width:1.0;" width="337" x="517" y="914.4966" />
+      <text fill="#073B6F" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="521" y="928.0317">▯</text>
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="529" y="928.0317">&nbsp;</text>
+      <image height="12" width="12" x="533" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAApklEQVR4XmPgcKpmQMfRjcsb/CoWNqCLgzCGwH80gC6Pwjl17RG6+v9T1h47gFPD95+/0dX/33v2DootKBriW1Y2oGvQjesPxKkBhDuW7D8AUxzfunIiujwKRzWyO8ksdXIxjG+XPaNBNqgNuw3IzkAHIL+haNh67MZndEXooGXh3kVwDeiS2MCtx6/BtoA1/P7zF10eA5y69hihAYQNkyY24MMwdQBvKDvWFDAX9QAAAABJRU5ErkJggg==" y="918.9848" />
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="553" y="928.0317">person</text>
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="605" y="928.0317">&nbsp;</text>
+      <rect fill="#1168BD" height="16.4883" style="stroke:none;stroke-width:1.0;" width="337" x="517" y="930.9848" />
+      <text fill="#3C7FC0" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="521" y="944.52">▯</text>
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="529" y="944.52">&nbsp;</text>
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47" x="537" y="944.52">system</text>
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="588" y="944.52">&nbsp;</text>
+      <rect fill="none" height="16.4883" style="stroke:none;stroke-width:1.0;" width="337" x="517" y="947.4731" />
+      <text fill="#444444" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="521" y="961.0083">▯</text>
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="529" y="961.0083">&nbsp;</text>
+      <text fill="#444444" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66" x="537" y="961.0083">boundary</text>
+      <text fill="#444444" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="41" x="607" y="961.852">(dashed)</text>
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="648" y="961.0083">&nbsp;</text>
+      <rect fill="#66622E" height="16.4883" style="stroke:none;stroke-width:1.0;" width="337" x="517" y="963.9614" />
+      <text fill="#CCCCCC" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="521" y="977.4966">▯</text>
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="529" y="977.4966">&nbsp;</text>
+      <text fill="#CCCCCC" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="191" x="537" y="977.4966">Government Body boundary</text>
+      <text fill="#CCCCCC" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="118" x="732" y="978.3403">(last back color, dashed)</text>
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="850" y="977.4966">&nbsp;</text>
+      <line style="stroke:none;stroke-width:1.0;" x1="517" x2="854" y1="898.0083" y2="898.0083" />
+      <line style="stroke:none;stroke-width:1.0;" x1="517" x2="854" y1="914.4966" y2="914.4966" />
+      <line style="stroke:none;stroke-width:1.0;" x1="517" x2="854" y1="930.9848" y2="930.9848" />
+      <line style="stroke:none;stroke-width:1.0;" x1="517" x2="854" y1="947.4731" y2="947.4731" />
+      <line style="stroke:none;stroke-width:1.0;" x1="517" x2="854" y1="963.9614" y2="963.9614" />
+      <line style="stroke:none;stroke-width:1.0;" x1="517" x2="854" y1="980.4497" y2="980.4497" />
+      <line style="stroke:none;stroke-width:1.0;" x1="517" x2="517" y1="898.0083" y2="980.4497" />
+      <line style="stroke:none;stroke-width:1.0;" x1="854" x2="854" y1="898.0083" y2="980.4497" />
      </g>
     </svg>
    </div>
    <figcaption>
-    System Landscape Diagram [<a href="../svg/SystemLandscape.svg">svg</a>|<a href="../png/SystemLandscape.png">png</a>|<a href="../puml/SystemLandscape.puml">puml</a>]
+    <a onclick="openSvgModal('SystemLandscape-modal', 'SystemLandscape-svg')">System Landscape Diagram</a>
    </figcaption>
   </figure>
+  <div class="modal" id="SystemLandscape-modal">
+   <div class="modal-background" onclick="closeModal('SystemLandscape-modal')"></div>
+   <div class="modal-content">
+    <div class="box">
+     <div id="SystemLandscape-svg" class="modal-box-content">
+      <!--?xml version="1.0" encoding="us-ascii" standalone="no"?-->
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" preserveAspectRatio="meet" version="1.1" viewBox="0 0 885 1007" zoomAndPan="magnify">
+       <defs /><g>
+        <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="131" x="370" y="23.5352">System Landscape</text><!--cluster group_1-->
+        <g id="cluster_group_1">
+         <rect fill="none" height="455.39" rx="2.5" ry="2.5" style="stroke:#CCCCCC;stroke-width:1.0;stroke-dasharray:7.0,7.0;" width="872" x="7" y="418.6183" />
+         <text fill="#CCCCCC" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="145" x="370.5" y="436.087">Government Body</text>
+        </g><!--entity CitizenServiceStaff-->
+        <g id="elem_CitizenServiceStaff">
+         <rect fill="#08427B" height="156.7969" rx="2.5" ry="2.5" style="stroke:#073B6F;stroke-width:0.5;" width="229" x="23.5" y="465.7683" />
+         <image height="48" width="48" x="114" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACMElEQVR4Xu2YvUrFQBCFb+kj+Ai+gq3Y2PgA+gCCtZ2V2AhqaSNiqY1gYWMjaCvXykoEKy21sLCNfELgMscksz8mWfDAB3Kuye7sTmYnmcwtbU9KRozSECOVla3T6uTqvrqZPlcPT68/XNw+VtvH19XC+sGe/f9UxIhl8/Cy+vj8qrpEYIsbR1N7fSxihDK/urvMKoeKHbH3ikGMEJi8Z9WbtH92lxyEGCHErLwVqWfvG4IYXkiBXGIn7f29iOGBAe0kUkTVsmN4EcMD255bdgwvYnigFOYW54cdx4MYHlIqT5Niy6oYHuzgORRbUsXwYAfPoV4DeHl7t+MnK/Y8EMMDzVlu9foQ5y6jFAU7hhcxvOSsRLH5D2J4KbqVqMlxoK3tnEevPogRAiuXUpFiD69ZxIghZidSV75GjFiYkGc3KMEpOW8RIxXed0kNJsrOAO0ypTfnxGvEKA0xSkMMD3zfIedJFQ4hCPlUwrX1daQWbURseonRBhNue1D5rc53JkVQwN9c21Wt+D20JxLjN7hpztahSwTi3RExLDlbhhCxm55PkWLMkrvrDBW73rUTYtSQu/aGQ4h0snNzBdD1wPWptrZDDBjL6tfiebBzbA2AUjg2NT3QYkBbrR9KTS/9YoC9eAxqeu0UI/eH21yiu7VzLSqApnIqxn8Af6TiA3A/A9Bn5+lV0xcMMWDoJs6qrakTo4a6OwZxqLa97YkxC1HzMkMzNQRtE3cFUAJilMY3OGTNL0NDLqIAAAAASUVORK5CYII=" y="475.7683" />
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="56" x="57.5" y="539.237">Citizen</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="5" x="113.5" y="539.237">&nbsp;</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="57" x="118.5" y="539.237">Service</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="5" x="175.5" y="539.237">&nbsp;</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="38" x="180.5" y="539.237">Staff</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="136" y="556.1472">&nbsp;</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="48.5" y="572.6355">Citizen</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="96.5" y="572.6355">&nbsp;</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47" x="100.5" y="572.6355">service</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="147.5" y="572.6355">&nbsp;</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="30" x="151.5" y="572.6355">staff</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="181.5" y="572.6355">&nbsp;</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="185.5" y="572.6355">within</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="81" y="589.1238">the</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="103" y="589.1238">&nbsp;</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="107" y="589.1238">Government.</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="37.5" y="607.612">Location</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="133" x="104.5" y="607.612">Customer Services</text>
+         <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="33.5" x2="242.5" y1="594.0769" y2="594.0769" />
+         <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="33.5" x2="242.5" y1="610.5652" y2="610.5652" />
+         <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="33.5" x2="33.5" y1="594.0769" y2="610.5652" />
+         <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="99.5" x2="99.5" y1="594.0769" y2="610.5652" />
+         <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="242.5" x2="242.5" y1="594.0769" y2="610.5652" />
+        </g><!--entity BackOfficeStaff-->
+        <g id="elem_BackOfficeStaff">
+         <rect fill="#08427B" height="156.7969" rx="2.5" ry="2.5" style="stroke:#073B6F;stroke-width:0.5;" width="215" x="287.5" y="465.7683" />
+         <image height="48" width="48" x="371" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACMElEQVR4Xu2YvUrFQBCFb+kj+Ai+gq3Y2PgA+gCCtZ2V2AhqaSNiqY1gYWMjaCvXykoEKy21sLCNfELgMscksz8mWfDAB3Kuye7sTmYnmcwtbU9KRozSECOVla3T6uTqvrqZPlcPT68/XNw+VtvH19XC+sGe/f9UxIhl8/Cy+vj8qrpEYIsbR1N7fSxihDK/urvMKoeKHbH3ikGMEJi8Z9WbtH92lxyEGCHErLwVqWfvG4IYXkiBXGIn7f29iOGBAe0kUkTVsmN4EcMD255bdgwvYnigFOYW54cdx4MYHlIqT5Niy6oYHuzgORRbUsXwYAfPoV4DeHl7t+MnK/Y8EMMDzVlu9foQ5y6jFAU7hhcxvOSsRLH5D2J4KbqVqMlxoK3tnEevPogRAiuXUpFiD69ZxIghZidSV75GjFiYkGc3KMEpOW8RIxXed0kNJsrOAO0ypTfnxGvEKA0xSkMMD3zfIedJFQ4hCPlUwrX1daQWbURseonRBhNue1D5rc53JkVQwN9c21Wt+D20JxLjN7hpztahSwTi3RExLDlbhhCxm55PkWLMkrvrDBW73rUTYtSQu/aGQ4h0snNzBdD1wPWptrZDDBjL6tfiebBzbA2AUjg2NT3QYkBbrR9KTS/9YoC9eAxqeu0UI/eH21yiu7VzLSqApnIqxn8Af6TiA3A/A9Bn5+lV0xcMMWDoJs6qrakTo4a6OwZxqLa97YkxC1HzMkMzNQRtE3cFUAJilMY3OGTNL0NDLqIAAAAASUVORK5CYII=" y="475.7683" />
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="38" x="327" y="539.237">Back</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="5" x="365" y="539.237">&nbsp;</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="50" x="370" y="539.237">Office</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="5" x="420" y="539.237">&nbsp;</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="38" x="425" y="539.237">Staff</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="393" y="556.1472">&nbsp;</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="102" x="300" y="572.6355">Administration</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="402" y="572.6355">&nbsp;</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="26" x="406" y="572.6355">and</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="432" y="572.6355">&nbsp;</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54" x="436" y="572.6355">support</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="30" x="323" y="589.1238">staff</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="353" y="589.1238">&nbsp;</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="357" y="589.1238">within</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="399" y="589.1238">&nbsp;</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="403" y="589.1238">the</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="425" y="589.1238">&nbsp;</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="429" y="589.1238">bank.</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="301.5" y="607.612">Location</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="119" x="368.5" y="607.612">Internal Services</text>
+         <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="297.5" x2="492.5" y1="594.0769" y2="594.0769" />
+         <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="297.5" x2="492.5" y1="610.5652" y2="610.5652" />
+         <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="297.5" x2="297.5" y1="594.0769" y2="610.5652" />
+         <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="363.5" x2="363.5" y1="594.0769" y2="610.5652" />
+         <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="492.5" x2="492.5" y1="594.0769" y2="610.5652" />
+        </g><!--entity BankingSystem-->
+        <g id="elem_BankingSystem">
+         <a href="../banking-system/context/" target="_top" title="../banking-system/context/" xlink:actuate="onRequest" xlink:href="../banking-system/context/" xlink:show="new" xlink:title="../banking-system/context/" xlink:type="simple">
+          <rect fill="#1168BD" height="121.2852" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="205" x="292.5" y="736.7183" />
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="67" x="330" y="762.187">Banking</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="5" x="397" y="762.187">&nbsp;</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="58" x="402" y="762.187">System</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="393" y="779.0972">&nbsp;</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="43" x="324.5" y="795.5855">Stores</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="367.5" y="795.5855">&nbsp;</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="16" x="371.5" y="795.5855">all</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="387.5" y="795.5855">&nbsp;</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="14" x="391.5" y="795.5855">of</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="405.5" y="795.5855">&nbsp;</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="409.5" y="795.5855">the</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="431.5" y="795.5855">&nbsp;</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="30" x="435.5" y="795.5855">core</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="302.5" y="812.0738">banking</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="358.5" y="812.0738">&nbsp;</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="362.5" y="812.0738">information</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="443.5" y="812.0738">&nbsp;</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="447.5" y="812.0738">about</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="332.5" y="828.562">citizens,</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="388.5" y="828.562">&nbsp;</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="65" x="392.5" y="828.562">accounts,</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="337" y="845.0503">transactions,</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="425" y="845.0503">&nbsp;</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="24" x="429" y="845.0503">etc.</text>
+         </a>
+        </g><!--entity GovernmentDepartment-->
+        <g id="elem_GovernmentDepartment">
+         <a href="../government-department/context/" target="_top" title="../government-department/context/" xlink:actuate="onRequest" xlink:href="../government-department/context/" xlink:show="new" xlink:title="../government-department/context/" xlink:type="simple">
+          <rect fill="#1168BD" height="177.1055" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="325" x="537.5" y="455.6183" />
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="100" x="650" y="481.087">Government</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="97" x="651.5" y="499.9308">Department</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="698" y="516.8409">&nbsp;</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="45" x="623.5" y="533.3292">Allows</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="668.5" y="533.3292">&nbsp;</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="672.5" y="533.3292">citizens</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="724.5" y="533.3292">&nbsp;</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="14" x="728.5" y="533.3292">to</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="742.5" y="533.3292">&nbsp;</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="30" x="746.5" y="533.3292">view</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="619.5" y="549.8175">information</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="700.5" y="549.8175">&nbsp;</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="704.5" y="549.8175">about</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="744.5" y="549.8175">&nbsp;</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="748.5" y="549.8175">their</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="65" x="632" y="566.3058">accounts,</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="697" y="566.3058">&nbsp;</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="26" x="701" y="566.3058">and</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="727" y="566.3058">&nbsp;</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="37" x="731" y="566.3058">make</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="665" y="582.7941">payments.</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="132" x="551.5" y="601.2823">Development Team</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="155" x="692.5" y="601.2823">Dev/Internet Services</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="45" x="551.5" y="617.7706">Owner</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="133" x="692.5" y="617.7706">Customer Services</text>
+          <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="547.5" x2="852.5" y1="587.7472" y2="587.7472" />
+          <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="547.5" x2="852.5" y1="604.2355" y2="604.2355" />
+          <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="547.5" x2="852.5" y1="620.7238" y2="620.7238" />
+          <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="547.5" x2="547.5" y1="587.7472" y2="620.7238" />
+          <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="687.5" x2="687.5" y1="587.7472" y2="620.7238" />
+          <line style="stroke:#FFFFFF;stroke-width:0.5;" x1="852.5" x2="852.5" y1="587.7472" y2="620.7238" />
+         </a>
+        </g><!--entity Citizen-->
+        <g id="elem_Citizen">
+         <rect fill="#08427B" height="119.8203" rx="2.5" ry="2.5" style="stroke:#073B6F;stroke-width:0.5;" width="181" x="435.5" y="208.7983" />
+         <image height="48" width="48" x="502" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACMElEQVR4Xu2YvUrFQBCFb+kj+Ai+gq3Y2PgA+gCCtZ2V2AhqaSNiqY1gYWMjaCvXykoEKy21sLCNfELgMscksz8mWfDAB3Kuye7sTmYnmcwtbU9KRozSECOVla3T6uTqvrqZPlcPT68/XNw+VtvH19XC+sGe/f9UxIhl8/Cy+vj8qrpEYIsbR1N7fSxihDK/urvMKoeKHbH3ikGMEJi8Z9WbtH92lxyEGCHErLwVqWfvG4IYXkiBXGIn7f29iOGBAe0kUkTVsmN4EcMD255bdgwvYnigFOYW54cdx4MYHlIqT5Niy6oYHuzgORRbUsXwYAfPoV4DeHl7t+MnK/Y8EMMDzVlu9foQ5y6jFAU7hhcxvOSsRLH5D2J4KbqVqMlxoK3tnEevPogRAiuXUpFiD69ZxIghZidSV75GjFiYkGc3KMEpOW8RIxXed0kNJsrOAO0ypTfnxGvEKA0xSkMMD3zfIedJFQ4hCPlUwrX1daQWbURseonRBhNue1D5rc53JkVQwN9c21Wt+D20JxLjN7hpztahSwTi3RExLDlbhhCxm55PkWLMkrvrDBW73rUTYtSQu/aGQ4h0snNzBdD1wPWptrZDDBjL6tfiebBzbA2AUjg2NT3QYkBbrR9KTS/9YoC9eAxqeu0UI/eH21yiu7VzLSqApnIqxn8Af6TiA3A/A9Bn5+lV0xcMMWDoJs6qrakTo4a6OwZxqLa97YkxC1HzMkMzNQRtE3cFUAJilMY3OGTNL0NDLqIAAAAASUVORK5CYII=" y="218.7983" />
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="56" x="498" y="282.267">Citizen</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="524" y="299.1772">&nbsp;</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="10" x="445.5" y="315.6655">A</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="455.5" y="315.6655">&nbsp;</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="459.5" y="315.6655">member</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="516.5" y="315.6655">&nbsp;</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="14" x="520.5" y="315.6655">of</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="534.5" y="315.6655">&nbsp;</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="538.5" y="315.6655">the</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="560.5" y="315.6655">&nbsp;</text>
+         <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="564.5" y="315.6655">public</text>
+        </g><!--entity GovNotify-->
+        <g id="elem_GovNotify">
+         <a href="../govnotify/context/" target="_top" title="../govnotify/context/" xlink:actuate="onRequest" xlink:href="../govnotify/context/" xlink:show="new" xlink:title="../govnotify/context/" xlink:type="simple">
+          <rect fill="#1168BD" height="88.3086" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="210" x="508" y="44.4883" />
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="80" x="573" y="69.957">GovNotify</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="611" y="86.8672">&nbsp;</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="26" x="518" y="103.3555">The</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="544" y="103.3555">&nbsp;</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="548" y="103.3555">Government</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="632" y="103.3555">&nbsp;</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="636" y="103.3555">Service</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="684" y="103.3555">&nbsp;</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="20" x="688" y="103.3555">for</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="553.5" y="119.8438">sending</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="608.5" y="119.8438">&nbsp;</text>
+          <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="60" x="612.5" y="119.8438">e-maills.</text>
+         </a>
+        </g><!--link Citizen to GovernmentDepartment-->
+        <g id="link_Citizen_GovernmentDepartment">
+         <path d="M513.28,329.1083 C511,353.0083 512.16,380.1683 523,402.6183 C532.38,422.0483 540.2842,433.9405 555.7242,449.5505 " fill="none" id="Citizen-to-GovernmentDepartment" style="stroke:#666666;stroke-width:1.0;" />
+         <polygon fill="#666666" points="561.35,455.2383,557.8571,447.4409,553.5913,451.6602,561.35,455.2383" style="stroke:#666666;stroke-width:1.0;" />
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="36" x="524" y="371.2198">Views</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="560" y="371.2198">&nbsp;</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="48" x="564" y="371.2198">account</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="612" y="371.2198">&nbsp;</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="57" x="616" y="371.2198">balances,</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="23" x="532" y="385.3527">and</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="555" y="385.3527">&nbsp;</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="41" x="559" y="385.3527">makes</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="600" y="385.3527">&nbsp;</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="61" x="604" y="385.3527">payments</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="35" x="581" y="399.4855">using</text>
+        </g><!--link GovernmentDepartment to BankingSystem-->
+        <g id="link_GovernmentDepartment_BankingSystem">
+         <path d="M593.33,633.0283 C551.75,667.2683 511.3448,700.5418 473.7848,731.4818 " fill="none" id="GovernmentDepartment-to-BankingSystem" style="stroke:#666666;stroke-width:1.0;" />
+         <polygon fill="#666666" points="467.61,736.5683,475.6922,733.7974,471.8774,729.1663,467.61,736.5683" style="stroke:#666666;stroke-width:1.0;" />
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="28" x="589.5" y="675.3198">Gets</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="617.5" y="675.3198">&nbsp;</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="48" x="621.5" y="675.3198">account</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="74" x="560.5" y="689.4527">information</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="634.5" y="689.4527">&nbsp;</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="33" x="638.5" y="689.4527">from,</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="671.5" y="689.4527">&nbsp;</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="23" x="675.5" y="689.4527">and</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="41" x="557" y="703.5855">makes</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="598" y="703.5855">&nbsp;</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="61" x="602" y="703.5855">payments</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="663" y="703.5855">&nbsp;</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="35" x="667" y="703.5855">using</text>
+        </g><!--link GovernmentDepartment to GovNotify-->
+        <g id="link_GovernmentDepartment_GovNotify">
+         <path d="M710.81,455.3583 C716.98,375.8483 716.99,257.0883 678,162.7983 C673.65,152.2783 672.1192,148.5039 664.8592,139.4339 " fill="none" id="GovernmentDepartment-to-GovNotify" style="stroke:#666666;stroke-width:1.0;" />
+         <polygon fill="#666666" points="659.86,133.1883,662.5171,141.3086,667.2013,137.5592,659.86,133.1883" style="stroke:#666666;stroke-width:1.0;" />
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="37" x="713" y="273.3098">Sends</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="750" y="273.3098">&nbsp;</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="42" x="754" y="273.3098">e-mail</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="796" y="273.3098">&nbsp;</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="35" x="800" y="273.3098">using</text>
+        </g><!--link GovNotify to Citizen-->
+        <g id="link_GovNotify_Citizen">
+         <path d="M582.16,133.1783 C576.06,142.6983 570.01,152.8983 565,162.7983 C557.72,177.1883 553.8609,185.7846 548.1909,200.9546 " fill="none" id="GovNotify-to-Citizen" style="stroke:#666666;stroke-width:1.0;" />
+         <polygon fill="#666666" points="545.39,208.4483,551.001,202.0049,545.3807,199.9043,545.39,208.4483" style="stroke:#666666;stroke-width:1.0;" />
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="37" x="566" y="175.3998">Sends</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="603" y="175.3998">&nbsp;</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="49" x="607" y="175.3998">e-mails</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="656" y="175.3998">&nbsp;</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="13" x="660" y="175.3998">to</text>
+        </g><!--link Citizen to CitizenServiceStaff-->
+        <g id="link_Citizen_CitizenServiceStaff">
+         <path d="M435.11,311.7683 C384.38,337.1583 321.27,372.0183 270,410.6183 C248.46,426.8283 232.6798,440.8144 213.5298,459.9444 " fill="none" id="Citizen-to-CitizenServiceStaff" style="stroke:#666666;stroke-width:1.0;" />
+         <polygon fill="#666666" points="207.87,465.5983,215.65,462.0668,211.4096,457.822,207.87,465.5983" style="stroke:#666666;stroke-width:1.0;" />
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="31" x="344" y="378.2198">Asks</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="375" y="378.2198">&nbsp;</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="62" x="379" y="378.2198">questions</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="4" x="441" y="378.2198">&nbsp;</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="13" x="445" y="378.2198">to</text>
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="69" x="366.5" y="392.3527">[Telephone]</text>
+        </g><!--link CitizenServiceStaff to BankingSystem-->
+        <g id="link_CitizenServiceStaff_BankingSystem">
+         <path d="M217.56,622.9283 C255,659.5283 293.2386,696.9067 328.0386,730.9167 " fill="none" id="CitizenServiceStaff-to-BankingSystem" style="stroke:#666666;stroke-width:1.0;" />
+         <polygon fill="#666666" points="333.76,736.5083,330.1354,728.7712,325.9417,733.0623,333.76,736.5083" style="stroke:#666666;stroke-width:1.0;" />
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="30" x="298" y="689.3198">Uses</text>
+        </g><!--link BackOfficeStaff to BankingSystem-->
+        <g id="link_BackOfficeStaff_BankingSystem">
+         <path d="M395,622.9283 C395,659.5283 395,694.4983 395,728.5083 " fill="none" id="BackOfficeStaff-to-BankingSystem" style="stroke:#666666;stroke-width:1.0;" />
+         <polygon fill="#666666" points="395,736.5083,398,728.5083,392,728.5083,395,736.5083" style="stroke:#666666;stroke-width:1.0;" />
+         <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="30" x="396" y="689.3198">Uses</text>
+        </g>
+        <rect fill="none" height="16.4883" style="stroke:none;stroke-width:1.0;" width="337" x="517" y="898.0083" />
+        <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="51" x="517" y="911.5434">Legend</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="568" y="911.5434">&nbsp;</text>
+        <rect fill="#08427B" height="16.4883" style="stroke:none;stroke-width:1.0;" width="337" x="517" y="914.4966" />
+        <text fill="#073B6F" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="521" y="928.0317">▯</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="529" y="928.0317">&nbsp;</text>
+        <image height="12" width="12" x="533" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAApklEQVR4XmPgcKpmQMfRjcsb/CoWNqCLgzCGwH80gC6Pwjl17RG6+v9T1h47gFPD95+/0dX/33v2DootKBriW1Y2oGvQjesPxKkBhDuW7D8AUxzfunIiujwKRzWyO8ksdXIxjG+XPaNBNqgNuw3IzkAHIL+haNh67MZndEXooGXh3kVwDeiS2MCtx6/BtoA1/P7zF10eA5y69hihAYQNkyY24MMwdQBvKDvWFDAX9QAAAABJRU5ErkJggg==" y="918.9848" />
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="553" y="928.0317">person</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="605" y="928.0317">&nbsp;</text>
+        <rect fill="#1168BD" height="16.4883" style="stroke:none;stroke-width:1.0;" width="337" x="517" y="930.9848" />
+        <text fill="#3C7FC0" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="521" y="944.52">▯</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="529" y="944.52">&nbsp;</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47" x="537" y="944.52">system</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="588" y="944.52">&nbsp;</text>
+        <rect fill="none" height="16.4883" style="stroke:none;stroke-width:1.0;" width="337" x="517" y="947.4731" />
+        <text fill="#444444" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="521" y="961.0083">▯</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="529" y="961.0083">&nbsp;</text>
+        <text fill="#444444" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66" x="537" y="961.0083">boundary</text>
+        <text fill="#444444" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="41" x="607" y="961.852">(dashed)</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="648" y="961.0083">&nbsp;</text>
+        <rect fill="#66622E" height="16.4883" style="stroke:none;stroke-width:1.0;" width="337" x="517" y="963.9614" />
+        <text fill="#CCCCCC" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="521" y="977.4966">▯</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="529" y="977.4966">&nbsp;</text>
+        <text fill="#CCCCCC" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="191" x="537" y="977.4966">Government Body boundary</text>
+        <text fill="#CCCCCC" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="118" x="732" y="978.3403">(last back color, dashed)</text>
+        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="850" y="977.4966">&nbsp;</text>
+        <line style="stroke:none;stroke-width:1.0;" x1="517" x2="854" y1="898.0083" y2="898.0083" />
+        <line style="stroke:none;stroke-width:1.0;" x1="517" x2="854" y1="914.4966" y2="914.4966" />
+        <line style="stroke:none;stroke-width:1.0;" x1="517" x2="854" y1="930.9848" y2="930.9848" />
+        <line style="stroke:none;stroke-width:1.0;" x1="517" x2="854" y1="947.4731" y2="947.4731" />
+        <line style="stroke:none;stroke-width:1.0;" x1="517" x2="854" y1="963.9614" y2="963.9614" />
+        <line style="stroke:none;stroke-width:1.0;" x1="517" x2="854" y1="980.4497" y2="980.4497" />
+        <line style="stroke:none;stroke-width:1.0;" x1="517" x2="517" y1="898.0083" y2="980.4497" />
+        <line style="stroke:none;stroke-width:1.0;" x1="854" x2="854" y1="898.0083" y2="980.4497" />
+       </g>
+      </svg>
+     </div>
+     <div class="has-text-centered">
+      System Landscape Diagram [<a href="../svg/SystemLandscape.svg" target="_blank">svg</a>|<a href="../png/SystemLandscape.png" target="_blank">png</a>|<a href="../puml/SystemLandscape.puml" target="_blank">puml</a>]
+     </div>
+    </div>
+   </div><button class="modal-close is-large" aria-label="close" onclick="closeModal('SystemLandscape-modal')"></button>
+  </div>
  </div></p></div>
         </div>
       </div>
     </div>
     <script type="text/javascript" src="../../reformat-mermaid.js"></script>
-    <script type="module">import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';</script>
+    <script type="module">import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.esm.min.mjs';</script>
   </body>
 </html>

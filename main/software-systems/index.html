@@ -1,12 +1,15 @@
 <!doctype html>
-<html lang="en" class="has-background-light">
+<html lang="en" data-theme="light" class="has-background-light">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Software Systems | Government Body</title>
-    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css" rel="stylesheet">
     <link href="../../style.css" rel="stylesheet">
     <link href="./../style-branding.css" rel="stylesheet">
+    <script type="text/javascript" src="../../modal.js"></script>
+    <script type="text/javascript" src="../../svg-modal.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
   </head>
   <body>
     <script type="text/javascript" src="../../header.js"></script>
@@ -14,7 +17,7 @@
       <div class="navbar-brand has-site-branding"><a href="../" class="navbar-item"><span class="has-text-weight-semibold has-site-branding">Government Body</span></a></div>
       <div class="navbar-menu has-site-branding">
         <div class="navbar-end">
-          <div class="navbar-item"><input class="input is-small is-rounded has-site-branding" id="search" type="search" size="30" maxlength="50" placeholder="Search (requires 3 characters)..." onkeyup="redirect(event, value, '../search/')"></div>
+          <div class="navbar-item"><input class="input is-small is-rounded has-site-branding" id="search" type="search" size="30" maxlength="50" placeholder="Search..." onkeyup="redirect(event, value, '../search/')"></div>
           <div class="navbar-item has-dropdown is-hoverable"><a class="navbar-link has-site-branding">main</a>
             <div class="navbar-dropdown is-right"><a href="../../main/" class="navbar-item">main</a>
               <hr class="navbar-divider">
@@ -32,13 +35,13 @@
         </ul>
         <p class="menu-label">Software systems</p>
         <ul class="menu-list has-site-branding">
-          <li><a href="../banking-system/" class="">Banking System</a><a href="../government-department/" class="">Government Department</a></li>
+          <li><a href="../banking-system/" class="">Banking System</a><a href="../government-department/" class="">Government Department</a><a href="../govnotify/" class="">GovNotify</a></li>
         </ul>
       </aside>
       <div class="container is-fluid has-background-white">
         <div class="content p-3">
           <h2>Software Systems</h2>
-          <table>
+          <table class="table is-fullwidth">
             <thead>
               <tr>
                 <th>Name</th>
@@ -55,7 +58,7 @@
                 <td>Allows citizens to view information about their accounts, and make payments.</td>
               </tr>
               <tr>
-                <th><span class="has-text-grey">GovNotify (External)</span></th>
+                <th><a href="../govnotify/" class="">GovNotify</a></th>
                 <td>The Government Service for sending e-maills.</td>
               </tr>
             </tbody>
@@ -64,6 +67,6 @@
       </div>
     </div>
     <script type="text/javascript" src="../../reformat-mermaid.js"></script>
-    <script type="module">import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';</script>
+    <script type="module">import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.esm.min.mjs';</script>
   </body>
 </html>

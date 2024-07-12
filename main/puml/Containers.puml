@@ -8,8 +8,8 @@ top to bottom direction
 !include <C4/C4_Context>
 !include <C4/C4_Container>
 
-Person_Ext(Citizen, "Citizen", $descr="A member of the public", $tags="", $link="")
-System_Ext(GovNotify, "GovNotify", $descr="The Government Service for sending e-maills.", $tags="", $link="")
+Person(Citizen, "Citizen", $descr="A member of the public", $tags="", $link="")
+System(GovNotify, "GovNotify", $descr="The Government Service for sending e-maills.", $tags="", $link="")
 System(BankingSystem, "Banking System", $descr="Stores all of the core banking information about citizens, accounts, transactions, etc.", $tags="", $link="")
 
 System_Boundary("GovernmentDepartment_boundary", "Government Department", $tags="") {
@@ -20,16 +20,16 @@ System_Boundary("GovernmentDepartment_boundary", "Government Department", $tags=
   Container(GovernmentDepartment.WebApplication, "Web Application", $techn="Java and Spring MVC", $descr="Delivers the static content and the Internet banking single page application.", $tags="", $link="")
 }
 
-Rel_D(GovNotify, Citizen, "Sends e-mails to", $techn="", $tags="", $link="")
-Rel_D(Citizen, GovernmentDepartment.WebApplication, "Visits someservice.gov.uk using", $techn="HTTPS", $tags="", $link="")
-Rel_D(Citizen, GovernmentDepartment.SinglePageApplication, "Views account balances, and makes payments using", $techn="", $tags="", $link="")
-Rel_D(Citizen, GovernmentDepartment.MobileApp, "Views account balances, and makes payments using", $techn="", $tags="", $link="")
-Rel_D(GovernmentDepartment.WebApplication, GovernmentDepartment.SinglePageApplication, "Delivers to the citizen's web browser", $techn="", $tags="", $link="")
-Rel_D(GovernmentDepartment.SinglePageApplication, GovernmentDepartment.APIApplication, "Makes API calls to", $techn="JSON/HTTPS", $tags="", $link="")
-Rel_D(GovernmentDepartment.MobileApp, GovernmentDepartment.APIApplication, "Makes API calls to", $techn="JSON/HTTPS", $tags="", $link="")
-Rel_D(GovernmentDepartment.APIApplication, GovernmentDepartment.Database, "Reads from and writes to", $techn="JDBC", $tags="", $link="")
-Rel_D(GovernmentDepartment.APIApplication, BankingSystem, "Makes API calls to", $techn="XML/HTTPS", $tags="", $link="")
-Rel_D(GovernmentDepartment.APIApplication, GovNotify, "Sends e-mail using", $techn="JSON/HTTPS", $tags="", $link="")
+Rel(GovNotify, Citizen, "Sends e-mails to", $techn="", $tags="", $link="")
+Rel(Citizen, GovernmentDepartment.WebApplication, "Visits someservice.gov.uk using", $techn="HTTPS", $tags="", $link="")
+Rel(Citizen, GovernmentDepartment.SinglePageApplication, "Views account balances, and makes payments using", $techn="", $tags="", $link="")
+Rel(Citizen, GovernmentDepartment.MobileApp, "Views account balances, and makes payments using", $techn="", $tags="", $link="")
+Rel(GovernmentDepartment.WebApplication, GovernmentDepartment.SinglePageApplication, "Delivers to the citizen's web browser", $techn="", $tags="", $link="")
+Rel(GovernmentDepartment.SinglePageApplication, GovernmentDepartment.APIApplication, "Makes API calls to", $techn="JSON/HTTPS", $tags="", $link="")
+Rel(GovernmentDepartment.MobileApp, GovernmentDepartment.APIApplication, "Makes API calls to", $techn="JSON/HTTPS", $tags="", $link="")
+Rel(GovernmentDepartment.APIApplication, GovernmentDepartment.Database, "Reads from and writes to", $techn="JDBC", $tags="", $link="")
+Rel(GovernmentDepartment.APIApplication, BankingSystem, "Makes API calls to", $techn="XML/HTTPS", $tags="", $link="")
+Rel(GovernmentDepartment.APIApplication, GovNotify, "Sends e-mail using", $techn="JSON/HTTPS", $tags="", $link="")
 
 SHOW_LEGEND(true)
 @enduml

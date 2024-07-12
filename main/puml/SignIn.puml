@@ -14,15 +14,15 @@ Container_Boundary("GovernmentDepartment.APIApplication_boundary", "API Applicat
   Component(GovernmentDepartment.APIApplication.SecurityComponent, "Security Component", $techn="Spring Bean", $descr="Provides functionality related to signing in, changing passwords, etc.", $tags="", $link="")
 }
 
-ContainerDb(GovernmentDepartment.Database, "Database", $techn="Oracle Database Schema", $descr="Stores user registration information, hashed authentication credentials, access logs, etc.", $tags="", $link="")
 Container(GovernmentDepartment.SinglePageApplication, "Single-Page Application", $techn="JavaScript and Angular", $descr="Provides all of the Internet banking functionality to customers via their web browser.", $tags="", $link="")
+ContainerDb(GovernmentDepartment.Database, "Database", $techn="Oracle Database Schema", $descr="Stores user registration information, hashed authentication credentials, access logs, etc.", $tags="", $link="")
 
-Rel_D(GovernmentDepartment.SinglePageApplication, GovernmentDepartment.APIApplication.SignInController, "1. Submits credentials to", $techn="JSON/HTTPS", $tags="", $link="")
-Rel_D(GovernmentDepartment.APIApplication.SignInController, GovernmentDepartment.APIApplication.SecurityComponent, "2. Validates credentials using", $techn="", $tags="", $link="")
-Rel_D(GovernmentDepartment.APIApplication.SecurityComponent, GovernmentDepartment.Database, "3. select * from users where username = ?", $techn="JDBC", $tags="", $link="")
-Rel_D(GovernmentDepartment.Database, GovernmentDepartment.APIApplication.SecurityComponent, "4. Returns user data to", $techn="JDBC", $tags="", $link="")
-Rel_D(GovernmentDepartment.APIApplication.SecurityComponent, GovernmentDepartment.APIApplication.SignInController, "5. Returns true if the hashed password matches", $techn="", $tags="", $link="")
-Rel_D(GovernmentDepartment.APIApplication.SignInController, GovernmentDepartment.SinglePageApplication, "6. Sends back an authentication token to", $techn="JSON/HTTPS", $tags="", $link="")
+Rel(GovernmentDepartment.SinglePageApplication, GovernmentDepartment.APIApplication.SignInController, "1. Submits credentials to", $techn="JSON/HTTPS", $tags="", $link="")
+Rel(GovernmentDepartment.APIApplication.SignInController, GovernmentDepartment.APIApplication.SecurityComponent, "2. Validates credentials using", $techn="", $tags="", $link="")
+Rel(GovernmentDepartment.APIApplication.SecurityComponent, GovernmentDepartment.Database, "3. select * from users where username = ?", $techn="JDBC", $tags="", $link="")
+Rel(GovernmentDepartment.Database, GovernmentDepartment.APIApplication.SecurityComponent, "4. Returns user data to", $techn="JDBC", $tags="", $link="")
+Rel(GovernmentDepartment.APIApplication.SecurityComponent, GovernmentDepartment.APIApplication.SignInController, "5. Returns true if the hashed password matches", $techn="", $tags="", $link="")
+Rel(GovernmentDepartment.APIApplication.SignInController, GovernmentDepartment.SinglePageApplication, "6. Sends back an authentication token to", $techn="JSON/HTTPS", $tags="", $link="")
 
 SHOW_LEGEND(true)
 @enduml
