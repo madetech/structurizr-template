@@ -8,7 +8,7 @@ workspace "Government Body" "This is an example workspace to illustrate the key 
 
         email = softwaresystem "GovNotify" "The Government Service for sending e-maills." "Existing System"
 
-        enterprise "Government Body" {
+        group "Government Body" {
             supportStaff = person "Citizen Service Staff" "Citizen service staff within the Government." "Civil Servant Staff" {
                 properties {
                     "Location" "Customer Services"
